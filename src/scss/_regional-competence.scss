@@ -1,0 +1,73 @@
+.regional-competence {
+    padding-top: 4.5rem;
+    padding-bottom: 7rem;
+    background-color: #F0F0F0;
+
+    .advantages__card-image-container {
+        width: 10rem;
+        margin-bottom: 2.8rem;
+    }
+
+    .advantages__card-title {
+        margin-bottom: 2.4rem;
+    }
+
+    .advantages__card-content {
+        margin-bottom: 4.8rem;
+    }
+}
+
+.regional-competence__heading {
+    @include sectionHeading();
+    margin-bottom: 4.4rem;
+}
+
+.regional-competence__info-card-heading {
+    @include sectionHeading();
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.regional-competence__info-card-content {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.regional-competence__info-card-link {
+    margin-top: auto;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: #535859;
+    padding: 1rem;
+    border: 1px solid #535859;
+    border-radius: .8rem;
+    transition: all .2s;
+    align-self: flex-start;
+    &:link,
+    &:visited {
+        color: #535859;
+    }
+
+    &:hover {
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: white;
+    }
+}
+
+.regional-competence__info-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2rem;
+}
+
+.regional-competence__info-col {
+    width: 33.33%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.regional-competence__info-card {
+    display: block;
+}

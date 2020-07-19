@@ -1,0 +1,82 @@
+.why-orenburg__content {
+    padding-top: 4.9rem;
+    padding-bottom: 5.9rem;
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+}
+
+.why-orenburg__heading {
+    @include sectionHeading();
+    margin-bottom: 2.2rem;
+}
+
+.why-orenburg__advantages-not-found {
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.why-orenburg__advantages-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2rem -.5rem;
+    
+}
+
+.why-orenburg__advantages-list-item {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem .5rem;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.why-orenburg__advantages-card {
+    flex-grow: 1;
+}
+
+.why-orenburg__advantages-card-title {
+    font-weight: 400;
+
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    color: black;
+    margin-bottom: 2.4rem;
+}
+
+.why-orenburg__advantages-card-text {
+    font-size: 1.8rem;
+    font-family: $roboto;
+    color: #7F7F7F;
+    line-height: 2.1rem;
+    padding-right: 10rem;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.why-orenburg__advantages-icon-container {
+    position: relative;
+    margin-bottom: 3.5rem;
+    width: 9rem;
+    &::after {
+        content: '';
+        width: 100%;
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+
+.why-orenburg__advantages-icon {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include objectFitContain();
+}

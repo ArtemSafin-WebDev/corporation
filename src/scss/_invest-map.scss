@@ -1,0 +1,205 @@
+.invest-map {
+    padding: 5rem 0;
+    padding-bottom: 12rem;
+}
+
+.invest-map__wrapper {
+    position: relative;
+    flex-grow: 1;
+    height: 50vh;
+    display: flex;
+    margin-bottom: 6rem;
+}
+
+.invest-map__outer-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.invest-map__heading {
+    margin-top: 6rem;
+    @include sectionHeading();
+    margin-bottom: 2rem;
+}
+
+
+.invest-map__filter {
+    width: 40rem;
+    flex-shrink: 0;
+    background-color: #fafafa;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(black, .1);
+    z-index: 1000;
+}
+
+.invest-map__map {
+    position: relative;
+    width: 50%;
+    flex-grow: 1;
+    background-color: orange;
+    &::before {
+        content: 'Карта';
+        color: white;
+        font-size: 34px;
+        font-weight: 700;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
+.invest-map__info-window-link {
+    transition: color .2s;
+    font-weight: 700;
+    font-size: 1.4rem;
+    &:link,
+    &:visited {
+        color: var(--primary-color, #00a6e0);
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color, #00a6e0);
+    }
+}
+
+
+.invest-map__info-window-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+
+
+.invest-map__legend {
+    background-color: #fff;
+    color: black;
+    padding: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(black, .2);
+}
+
+
+.invest-map__region,
+.invest-map__legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+.invest-map__legend-item {
+    padding-left: 1rem;
+}
+
+.invest-map__region-label,
+.invest-map__legend-item-label {
+    
+    width: 2.2rem;
+    height: 2.2rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.invest-map__region-label-border,
+.invest-map__legend-item-label-border {
+    border: 2px solid currentColor;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.invest-map__region-label-fill,
+.invest-map__legend-item-label-fill {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.invest-map__legend-item-text,
+.invest-map__region-name {
+    font-size: 1.4rem;
+    color: black;
+}
+
+.invest-map__filter {
+    padding: 20px;
+}
+
+.invest-map__filter-heading {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+.invest-map__filter-checkboxes-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.invest-map__filter-checkbox-wrapper {
+    margin-right: 2rem;
+}
+
+.invest-map__filter-checkbox {
+    user-select: none;
+}
+
+.invest-map__filter-checkbox-content {
+    display: flex;
+    align-items: center;
+}
+
+
+.invest-map__filter-checkbox-input {
+    @include visuallyHidden();
+}
+
+
+.invest-map__filter-checkbox-checkmark {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    position: relative;
+    border: 2px solid var(--primary-color, #00a6e0);
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: var(--primary-color, #00a6e0);
+        opacity: 0;
+        transition: opacity .2s;
+    }
+}
+
+
+.invest-map__filter-checkbox-text {
+    font-size: 1.4rem;
+    flex-grow: 1;
+    width: 50%;
+}
+
+
+.invest-map__filter-checkbox-input:checked + .invest-map__filter-checkbox-content .invest-map__filter-checkbox-checkmark::before {
+    opacity: 1;
+}

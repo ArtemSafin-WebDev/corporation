@@ -1,0 +1,353 @@
+.region-map {
+    padding: 4rem 0;
+    // padding-bottom: 10rem;
+
+    // background-image: linear-gradient(to top, rgba(#222328, .75), rgba(#222328, .75)), url(../img/map-bg.jpg);
+    background-image: url(../img/map-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.region-map__wrapper {
+    position: relative;
+    height: 83rem;
+    // border: 1px solid lightgray;
+    overflow: hidden;
+    // background-color: $primary-color;
+
+
+
+    box-shadow: 0px 3rem 6rem 0px rgba(0, 0, 0, 0.72);
+
+    
+      
+    
+    border-radius: 5px;
+
+    @include breakpoint(mobile) {
+        height: 30rem;
+    }
+    
+}
+
+.region-map__heading {
+    // margin-top: 6rem;
+    @include sectionHeading();
+    margin-bottom: 2rem;
+    color: black;
+
+  
+}
+
+.region-map__item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, transform 0.4s ease-in, visibility 0s linear 4s;
+    z-index: 5;
+    transform: scale(1.4);
+
+    @include breakpoint(mobile) {
+        transform: scale(1);
+    }
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.4s, transform 0.4s ease-out;
+        transform: scale(1);
+        z-index: 20;
+    }
+}
+
+.region-map__russia-map,
+.region-map__orenburg-map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.region-map__russia-map-image {
+    position: absolute;
+    // bottom: -42rem;
+    // left: -1rem;
+    // width: 158%;
+    // height: calc(158% + 42rem);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    max-width: none;
+    @include objectFitCover();
+
+    @include breakpoint(mobile) {
+        @include objectFitCoverRight();
+    }
+}
+
+.region-map__orenburg-map {
+    background-color: white;
+}
+
+.region-map__buttons {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 4rem;
+    left: 6rem;
+    z-index: 100;
+    @include breakpoint(mobile) {
+        left: 1.5rem;
+        bottom: 2rem;
+    }
+}
+
+.region-map__button {
+    @include btn();
+    background-color: transparent;
+    margin-right: 2rem;
+    transition: all 0.2s;
+    border-radius: .8rem;
+    padding: 1.5rem 2.5rem;
+    background-color: white;
+    color: var(--primary-color, #00a6e0);
+    border: 1px solid $primary-color;
+    &:link,
+    &:visited {
+        color: $primary-color;
+    }
+
+    &.active {
+        background-color: $primary-color;
+        border: 1px solid $primary-color;
+        color: white;
+    }
+
+    @include breakpoint(mobile) {
+        margin-right: 1.5rem;
+        font-size: 1.8rem;
+        padding: .8rem 1.2rem;
+    }
+}
+
+.region-map__orenburg-map-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: all 0.2s;
+    opacity: 1;
+    visibility: visible;
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+
+        transition: opacity 0.2s, visibility 0s linear 0.2s;
+    }
+}
+
+// .region-map__orenburg-map-layer[data-layer="cities"] {
+//     z-index: 40;
+
+// }
+
+.region-map__orenburg-map-layer-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCoverRegionMap();
+
+    
+}
+
+.region-map__orenburg-map-filters {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    padding: 2rem;
+    width: 50rem;
+    background-color: rgba(white, .6);
+    // backdrop-filter: blur(2px);
+    border: 1px solid rgba(black, .05);
+    border-radius: none;
+    z-index: 100;
+    // border-top: none;
+
+    @include breakpoint(mobile) {
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.region-map__orenburg-map-filters-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+}
+
+.region-map__orenburg-map-filters-list-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.region-map__orenburg-map-filters-checkbox {
+    display: block;
+    user-select: none;
+}
+
+.region-map__orenburg-map-filters-checkbox-input {
+    @include visuallyHidden();
+}
+
+.region-map__orenburg-map-filters-checkbox-content {
+    display: flex;
+    align-items: center;
+}
+
+.region-map__orenburg-map-filters-checkbox-mark {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    border: 1px solid currentColor;
+    position: relative;
+    color: $primary-color;
+    &::before {
+        content: '';
+        width: 70%;
+        height: 70%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background-color: currentColor;
+        transition: transform 0.2s;
+    }
+}
+
+.region-map__orenburg-map-filters-checkbox-input:checked ~ .region-map__orenburg-map-filters-checkbox-content .region-map__orenburg-map-filters-checkbox-mark {
+    &::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.region-map__orenburg-map-filters-checkbox-input[name='toser'] ~ .region-map__orenburg-map-filters-checkbox-content .region-map__orenburg-map-filters-checkbox-mark {
+    color: #da4537;
+}
+.region-map__orenburg-map-filters-checkbox-input[name='airport'] ~ .region-map__orenburg-map-filters-checkbox-content .region-map__orenburg-map-filters-checkbox-mark {
+    color: #549fd0;
+}
+.region-map__orenburg-map-filters-checkbox-input[name='roads'] ~ .region-map__orenburg-map-filters-checkbox-content .region-map__orenburg-map-filters-checkbox-mark {
+    color: #ff9436;
+}
+.region-map__orenburg-map-filters-checkbox-input[name='railway'] ~ .region-map__orenburg-map-filters-checkbox-content .region-map__orenburg-map-filters-checkbox-mark {
+    color: #545454;
+}
+
+.region-map__orenburg-map-filters-checkbox-text {
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.region-map__zoom {
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: $primary-color;
+    right: 18rem;
+    top: 36rem;
+
+    z-index: 10;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -5;
+        border: 3px solid white;
+
+        border-radius: 50%;
+        animation-fill-mode: both;
+    }
+
+    &::after {
+        content: '';
+        z-index: -10;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($primary-color, 0.4);
+        transform: scale(1);
+        border-radius: 50%;
+
+        animation-name: zoom;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+    }
+
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+.region-map__zoom-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 20;
+
+    svg {
+        width: 3rem;
+        height: 3rem;
+        fill: white;
+    }
+}

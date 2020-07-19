@@ -1,0 +1,351 @@
+.region-economics {
+    position: relative;
+    z-index: 1;
+    background-color: $primary-color;
+    padding-top: 3.8rem;
+    padding-bottom: 2.8rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/region-economics-bg.jpg');
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+}
+
+.region-economics__heading {
+    @include sectionHeading();
+    color: white;
+    margin-bottom: 1.7rem;
+}
+
+.region-economics__content {
+    overflow: hidden;
+    background: #f0f0f0;
+    border-radius: 0.8rem;
+    color: #535859;
+    display: flex;
+    box-shadow: 0px 0.3rem 1rem rgba(0, 0, 0, 0.3);
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.region-economics__nav {
+    width: 41.4rem;
+    flex-shrink: 0;
+    padding: 1.4rem 0;
+    background-color: #fff;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+      
+    }
+}
+
+.region-economics__nav-link {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    min-height: 7rem;
+    padding: 0 4.4rem;
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+    position: relative;
+    &:link,
+    &:visited {
+        color: #535859;
+    }
+
+    .no-touch &:not(.active):hover,
+    .touch &:not(.active):active {
+        background: #4ba4db;
+        color: white;
+    }
+
+    &.active {
+        color: black;
+        background: #f0f0f0;
+        .region-economics__nav-link-mark {
+            opacity: 1;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        padding: 0 2rem;
+        font-size: 2.2rem;
+        min-height: 6rem;
+    }
+}
+
+.region-economics__nav-link-mark {
+    width: 0.5rem;
+    height: 5.7rem;
+    background: #4ba4db;
+    border-radius: 0px 0.8rem 0.8rem 0px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    @include breakpoint(mobile) {
+        height: 4.8rem;
+    }
+}
+
+.region-economics__item-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 3.9rem 3.3rem;
+    @include breakpoint(mobile) {
+        padding: 2rem;
+       
+    }
+}
+
+.region-economics__item-card-row {
+    flex-grow: 1;
+    margin: -1.6rem;
+    display: flex;
+
+    .region-economics__item-card--icons-mode & {
+        flex-wrap: wrap;
+    }
+
+    @include breakpoint(mobile) {
+        flex-wrap: wrap;
+    }
+}
+
+.region-economics__item-card-left-col,
+.region-economics__item-card-right-col {
+    padding: 1.6rem;
+}
+
+.region-economics__item-card-left-col {
+    width: 44.2rem;
+    flex-shrink: 0;
+
+    .region-economics__item-card--icons-mode & {
+        width: 100%;
+    }
+
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+    }
+}
+
+.region-economics__item-card-right-col {
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .region-economics__item-card--icons-mode & {
+        width: 100%;
+        flex-grow: 0;
+        order: -1;
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+        flex-grow: 0;
+    }
+}
+
+.region-economics__item-card-numbers {
+    .region-economics__item-card--icons-mode & {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -1.6rem;
+    }
+}
+
+.region-economics__item-card-numbers-col {
+    margin-bottom: 3.3rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .region-economics__item-card--icons-mode & {
+        width: 50%;
+        margin: 0;
+        padding: 1.6rem;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.region-economics__item-card-numbers-block {
+    background-color: #fff;
+    background: #ffffff;
+    box-shadow: 0px 0.4rem 1rem rgba(0, 0, 0, 0.05);
+    border-radius: 0.8rem;
+
+    padding: 1.8rem;
+    padding-bottom: 1.2rem;
+   
+   
+    min-height: 15.8rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+.region-economics__item-card-numbers-block-image-container {
+    width: 12.6rem;
+    flex-shrink: 0;
+    position: relative;
+    margin-right: 3rem;
+    margin-left: 1rem;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include objectFitContain();
+    }
+}
+
+
+.region-economics__item-card-numbers-block-content {
+    width: 50%;
+    flex-grow: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+
+    .region-economics__item-card--icons-mode & {
+        align-self: center;
+    }
+}
+
+.region-economics__item-card-numbers-block-title {
+    font-size: 1.8rem;
+    line-height: 1;
+    color: black;
+    font-weight: 400;
+}
+
+.region-economics__item-card-numbers-block-amount {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+
+    color: #535859;
+}
+
+.region-economics__item-card-numbers-block-amount-number {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 1;
+
+    .large {
+        font-weight: 500;
+        font-size: 8rem;
+        line-height: 1;
+        @include breakpoint(mobile) {
+            font-size: 6rem;
+        }
+    }
+}
+
+.region-economics__item-card-numbers-block-amount-units {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    margin-left: 1rem;
+}
+
+.region-economics__graph-card {
+    background: #ffffff;
+    box-shadow: 0px 0.4rem 1rem rgba(0, 0, 0, 0.05);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 34.9rem;
+    margin-bottom: 3.3rem;
+    flex-grow: 1;
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.region-economics__graph-card-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: black;
+    margin-bottom: 1rem;
+
+    font-weight: 400;
+}
+
+.region-economics__graph-card-image-container {
+    flex-grow: 1;
+    width: 95%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.region-economics__graph-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitContain();
+}
+
+.region-economics__items {
+    width: 50%;
+    flex-grow: 1;
+    position: relative;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.region-economics__item {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+
+    &.active {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s;
+        z-index: 10;
+    }
+}

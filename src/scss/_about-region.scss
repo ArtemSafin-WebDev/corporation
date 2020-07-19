@@ -1,0 +1,240 @@
+.about-regions {
+    padding-top: 6rem;
+}
+
+
+.about-regions__maps {
+   
+    padding-top: 6rem;
+    position: relative;
+}
+
+
+.about-regions__maps-heading {
+    @include sectionHeading();
+    margin-bottom: 0rem;
+    color: white;
+}
+
+
+.about-regions__maps-floating-heading {
+    position: absolute;
+    top: 10rem;
+    z-index: 100;
+
+    .breadcrumbs {
+        color: white;
+        margin-top: 0;
+    }
+
+    .breadcrumbs__link {
+        color: white;
+        &:link,
+        &:visited {
+            color: white;
+        }
+    }
+}
+
+.about-regions__main-heading {
+    color: black;
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+
+.about-regions__maps-buttons {
+    display: flex;
+    align-items: center;
+    // margin-top: 2rem;
+    position: absolute;
+    bottom: 5rem;
+    z-index: 200;
+}
+
+
+.about-regions__map-btn {
+
+    @include btn();
+    background-color: transparent;
+    background-color: $primary-color;
+    border: 1px solid white;
+    color: white;
+    
+    &:link,
+    &:visited {
+        
+        color: white;
+    }
+
+    &.active {
+        background-color: white;
+        color: var(--primary-color, #00a6e0);
+    }
+}
+
+
+
+.about-regions__maps-no-maps {
+    font-size: 2.4rem;
+    color: black;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+.about-regions__maps-container {
+    position: relative;
+
+}
+
+
+.about-regions__map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity .3s ease .3s, visibility 0s linear .6s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        z-index: 5;
+        transition: all .3s;
+        
+    }
+}
+
+
+
+.about-regions__map-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.about-regions__map-info-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-regions__map-description {
+    width: 50rem;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: right;
+    margin-top: 4rem;
+    margin-left: auto;
+    margin-bottom: auto;
+    padding-right: 4rem;
+}
+
+
+.about-regions__map-indicators-list {
+    margin-left: auto;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.about-regions__map-indicators-list-item {
+   margin-bottom: 2rem;
+   &:last-child {
+       margin-bottom: 0;
+   }
+}
+
+
+.about-regions__map-indicators-card-name {
+   font-family: $fira;
+   display: block;
+   flex-shrink: 0;
+   font-size: 3rem;
+}
+
+
+.about-regions__map-indicators-card-value {
+    font-size: 8rem;
+    margin-right: 0.5rem;
+    font-weight: 700;
+    display: block;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.about-regions__map-indicators-card-unit {
+    font-weight: 700;
+    font-size: 3rem;
+    display: block;
+    flex-shrink: 0;
+    font-family: $fira;
+
+}
+
+.about-regions__map-indicators-card {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    
+    font-family: $roboto;
+}
+
+.about-regions__map-indicators-card-left {
+    padding-right: 1.4rem;
+    text-align: right;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+.about-regions__map-indicators-card-right {
+    padding-left: 1.4rem;
+    display: flex;
+    // flex-wrap: wrap;
+    align-items: baseline;
+    text-align: left;
+    width: 42rem;
+    flex-shrink: 0;
+    
+}
+
+.about-regions__map-indicators-card-left,
+.about-regions__map-indicators-card-right {
+    
+   
+}
+
+
+.about-regions__map-indicators-card-left {
+    border-right: 2px solid #ff9436;
+}
+
+.about-regions__map-image {
+   
+    height: calc(100vh - 6rem);
+    width: 100%;
+    @include objectFitCover();
+}
+
+
+
+

@@ -1,0 +1,396 @@
+.free-from-taxes {
+    background: #f0f0f0;
+    @include breakpoint(mobile) {
+        padding: 0;
+        position: relative;
+        .container {
+            padding: 0;
+        }
+    }
+}
+
+.free-from-taxes__slider {
+    position: relative;
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+        position: static;
+    }
+}
+
+.free-from-taxes__slider-nav {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2rem);
+    border-radius: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 4.7rem;
+    z-index: 100;
+    color: white;
+    padding: 2rem;
+    padding-top: 1.4rem;
+    width: 40rem;
+
+    @include breakpoint(mobile) {
+        // width: 100%;
+        // position: relative;
+        // left: 0;
+        // bottom: 0;
+        // order: 2;
+        left: var(--content-padding);
+        right: var(--content-padding);
+        bottom: 2rem;
+        z-index: 100;
+        width: auto;
+    }
+}
+
+.free-from-taxes__slider-nav-slider-card {
+    padding-bottom: 2rem;
+}
+
+.free-from-taxes__slider-nav-slider-card-title {
+    font-weight: 600;
+    font-size: 3.6rem;
+    line-height: 4.3rem;
+    @include breakpoint(mobile) {
+        font-size: 2.8rem;
+        line-height: 1.2;
+        margin-bottom: .5rem;
+    }
+    
+}
+
+.free-from-taxes__slider-nav-slider-card-text {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    margin-bottom: 1.4rem;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+}
+
+.free-from-taxes__slider-nav-slider-card-link {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    border: 1px solid #ffffff;
+    text-align: center;
+    transition: background-color .2s;
+    display: inline-block;
+    &:link, 
+    &:visited {
+        color: white;
+    }
+
+    &:hover {
+        background-color: rgba(white, 0.2);
+    }
+
+    @include breakpoint(mobile) {
+       
+    }
+}
+
+.free-from-taxes__slider-nav-btns {
+    display: flex;
+    align-items: center;
+}
+
+.free-from-taxes__slider-nav-btn {
+    width: 4.2rem;
+    height: 4.2rem;
+    flex-shrink: 0;
+    margin-right: 0.8rem;
+    border: 1px solid #ffffff;
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .2s, opacity .2s;
+    svg {
+        fill: white;
+        width: 0.8rem;
+        height: 1.8rem;
+    }
+
+
+    &.swiper-button-disabled {
+        cursor: default;
+        opacity: .5;
+    }
+
+    &:not(.swiper-button-disabled) {
+       
+        &:hover {
+            background-color: rgba(white, 0.2);
+        }
+    }
+}
+
+.free-from-taxes__slider-nav-fraction-pagination {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    text-shadow: 0px 0px 1.5rem rgba(0, 0, 0, 0.5);
+}
+
+.free-from-taxes__slider-main-slider {
+    .swiper-container {
+        margin-left: calc((100vw - 100%) / 2 * -1);
+        padding-left: calc((100vw - 100%) / 2);
+
+        @include breakpoint(mobile) {
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+        }
+    }
+}
+
+.free-from-taxes__slider-card {
+    display: flex;
+    min-height: 55rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        min-height: auto;
+    }
+}
+
+
+.free-from-taxes__slider-card-left-col {
+    width: 50%;
+    flex-grow: 1;
+    position: relative;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.free-from-taxes__slider-card-image-container {
+    position: absolute;
+    left: calc((100vw - 100% - 56rem) / 2 * -1);
+    top: 0;
+    height: 100%;
+    background-color: $primary-color;
+    right: 0;
+    @include breakpoint(mobile) {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(black, .4);
+        }
+    }
+}
+
+
+.free-from-taxes__slider-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+.free-from-taxes__slider-card-right-col {
+    width: 56rem;
+   
+    margin-left: auto;
+    // padding-top: 5rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        width: 100%;
+        padding: 3rem var(--content-padding);
+        padding-bottom: 32rem;
+    }
+}
+
+.free-from-taxes__slider-card-title {
+    font-size: 3.6rem;
+    line-height: 4.3rem;
+    
+    font-weight: 400;
+    color: black;
+
+    padding: 3.2rem 5rem;
+    padding-right: 1rem;
+
+    @include breakpoint(mobile) {
+        position: relative;
+        z-index: 100;
+        padding: 0;
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        color: white;
+    }
+   
+}
+
+.free-from-taxes__slider-card-advantages {
+    position: relative;
+    left: -12rem;
+    background: #ffffff;
+    box-shadow: 0px 0.4rem 3rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
+    margin-bottom: 4.7rem;
+
+    @include breakpoint(mobile) {
+        left: 0;
+        margin: 0;
+    }
+}
+
+.free-from-taxes__slider-card-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.free-from-taxes__slider-card-list-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #F4F4F4;
+    &:nth-child(odd) {
+        border-right: 1px solid #F4F4F4;
+    }
+
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
+    &:nth-last-child(2) {
+        border-bottom: none;
+    }
+}
+
+.free-from-taxes__slider-card-list-card {
+    padding: 2.1rem 3.5rem;
+    color: #535859;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+    }
+}
+
+.free-from-taxes__slider-card-list-card-title {
+    font-weight: 300;
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    margin-bottom: .5rem;
+    max-width: 25rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        max-width: none;
+        margin-bottom: 1rem;
+    }
+}
+
+.free-from-taxes__slider-card-list-card-amount {
+    display: flex;
+    align-items: baseline;
+
+    @include breakpoint(mobile) {
+        margin-top: auto;
+    }
+  
+}
+
+.free-from-taxes__slider-card-list-card-amount-number {
+    position: relative;
+    font-weight: 500;
+    font-size: 10rem;
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+
+    &.need-spacing {
+        letter-spacing: -0.05em;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 8rem;
+    }
+}
+
+.free-from-taxes__slider-card-list-card-amount-number-small {
+    font-weight: 500;
+    font-size: 8rem;
+    line-height: 1;
+    @include breakpoint(mobile) {
+        font-size: 6rem;
+    }
+}
+
+.free-from-taxes__slider-card-list-card-amount-notoser {
+    position: absolute;
+    left: 100%;
+    margin-left: .8rem;
+    top: 1rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    color: #ababab;
+    font-weight: 400;
+    width: 12rem;
+    letter-spacing: 0;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.1;
+        top: 0;
+    }
+}
+
+.free-from-taxes__slider-card-list-card-amount-number-percent {
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 1;
+    color: #535859;
+    margin-left: .8rem;
+}
+
+
+.free-from-taxes__slider-nav-progress {
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+
+.swiper-pagination-progressbar-fill {
+    background-color: #fff !important;
+}
+
+.free-from-taxes__slider-nav-fraction-pagination {
+    margin-left: 1rem;
+}

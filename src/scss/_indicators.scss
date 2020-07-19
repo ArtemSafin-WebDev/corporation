@@ -1,0 +1,523 @@
+.indicators {
+    padding: 5rem 0;
+    position: relative;
+    z-index: 1;
+
+    &--npa {
+        background-image: linear-gradient(to top, rgba(#222328, .85), rgba(#222328, .85)), url('../img/npa-bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+}
+
+.indicators__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#222328, 0.85);
+        z-index: 5;
+    }
+
+
+    .indicators--npa & {
+        display: none;
+    }
+}
+
+.indicators__bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+    // opacity: .15;
+}
+
+.indicators__nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.indicators__categories a,
+.indicators__nav-link {
+    display: block;
+    font-weight: 400;
+    font-size: 1.8rem;
+    transition: color 0.2s, background-color 0.2s, border-color .2s;
+    position: relative;
+    z-index: 1;
+    padding: 2rem 2.5rem;
+    background-color: #c4c4c4;
+    text-transform: uppercase;
+
+    .no-accordeons & {
+        background-color: #f0f0f0 !important;
+    }
+
+    display: flex;
+    align-items: center;
+    
+    padding-right: 3rem;
+    &::first-letter {
+        text-transform: uppercase;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background-color: $primary-color;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    &::after {
+        content: '';
+        left: 100%;
+        top: 0;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 3.25rem 0 3.25rem 2rem;
+        border-color: transparent transparent transparent #ffffff;
+        opacity: 0;
+        transition: all .2s;
+        pointer-events: none;
+    }
+    &:link,
+    &:visited {
+        color: $text-color;
+
+        color: #707070;
+    }
+
+    &.active {
+        background-color: #fff !important;
+        color: $primary-color;
+        &::before,
+        &::after {
+            opacity: 1;
+        }
+    }
+
+
+    .indicators--npa & {
+        background-color: #626266 !important;
+        min-height: 8.6rem;
+        padding: 1.4rem 1.4rem;
+        border-bottom: 1px solid #78797c;
+        &:link,
+        &:visited {
+            color: #aeb0b2;
+        }
+       
+        &::after {
+            border-color: transparent transparent transparent #626266;
+            border-width: 4.34rem 0 4.34rem 2rem;
+        }
+
+        &:not(.active):hover {
+            background-color: $primary-color !important;
+            color: white;
+            border-color: $primary-color !important;
+            &::after {
+                opacity: 1;
+                border-color: transparent transparent transparent $primary-color !important;
+            }
+        }
+
+        &.active {
+            background-color: white !important;
+            border-color: white !important;
+            &:link,
+            &:visited {
+                color: $primary-color;
+            }
+
+
+           
+
+            &::after {
+                border-color: transparent transparent transparent white;
+            }
+        }
+
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .indicators--new & {
+        background-color: rgba(black, 0.4) !important;
+        &:link,
+        &:visited {
+            color: white;
+        }
+
+        &:not(.active):hover {
+            background-color: $primary-color !important;
+            color: white;
+            &::after {
+                opacity: 1;
+                border-color: transparent transparent transparent $primary-color !important;
+            }
+        }
+
+        &.active {
+            background-color: white !important;
+
+            &:link,
+            &:visited {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.indicators__nav-link.has-deeper-level {
+    &::after {
+        content: '';
+
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 595.27 347.48'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%2349a2dc;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3EArtboard 1%3C/title%3E%3Cg id='Слой_1'%3E%3Cpath class='cls-1' d='M50,0C5.63,0-16.74,54,14.68,85.21L262.49,332.84a49.72,49.72,0,0,0,70.47,0L580.59,85.21C612,54,589.65,0,545.27,0Z'/%3E%3C/g%3E%3C/svg%3E");
+        width: 1.2rem;
+        height: 1.2rem;
+        flex-shrink: 0;
+        margin-left: 1rem;
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.2s;
+    }
+
+    &.open {
+        &::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+}
+
+.indicators__nav-link-icon-container {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2rem;
+    flex-shrink: 0;
+
+
+    .indicators--npa & {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1.5rem;
+    }
+}
+
+.indicators__nav-link-icon {
+    @include objectFitContain();
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 1;
+}
+
+.indicators__content {
+    display: flex;
+    margin: -2rem;
+}
+
+.indicators__left-column {
+    width: 40rem;
+    flex-shrink: 0;
+    padding: 2rem;
+}
+
+.indicators__right-column {
+    width: 50%;
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.indicators__items {
+    position: relative;
+}
+
+.indicators__item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+        z-index: 5;
+        transition: all 0.3s;
+    }
+}
+
+.indicators__heading {
+    @include sectionHeading();
+    margin-bottom: 2rem;
+
+    .indicators--new & {
+        color: white;
+    }
+
+
+    .indicators--npa & {
+        color: white;
+    }
+}
+
+.indicators__cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2rem;
+}
+
+.indicators__cards-list-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.indicators__card {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    // padding: 2rem;
+    // box-shadow: 0px 0px 15px rgba(black, 0.1);
+}
+
+.indicators__card-title {
+    font-size: 2rem;
+
+    color: #707070;
+
+    font-weight: 400;
+
+    .indicators--new & {
+        color: white;
+    }
+
+
+    .indicators--npa & {
+        color: white;
+    }
+
+    a {
+        transition: color 0.2s;
+        &:link,
+        &:visited {
+            color: inherit;
+        }
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.indicators__card-description {
+    font-weight: 700;
+    font-size: 4.5rem;
+    // font-weight: 400;
+    color: var(--primary-color, #00a6e0);
+}
+
+.indicators__card-number {
+    display: flex;
+    align-items: baseline;
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: var(--primary-color, #00a6e0);
+
+    .indicators--new & {
+        color: white;
+        font-weight: 400;
+    }
+}
+
+.indicators__card-number-value {
+    font-size: 5rem;
+    margin-right: 0.2em;
+}
+
+.indicators__categories {
+    .children a {
+        padding-left: 5rem;
+    }
+}
+
+.hierctest {
+    ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+    }
+    ul {
+        > li a {
+            padding-left: 3.5rem;
+            background-color: #d1d1d1;
+        }
+
+        ul {
+            li a {
+                padding-left: 4.5rem;
+                background-color: #e6e6e6;
+            }
+
+            ul {
+                li a {
+                    padding-left: 5.5rem;
+
+                    background-color: #f1f1f1;
+                }
+            }
+        }
+    }
+}
+
+.indicators__all-measures {
+    margin-top: 0.5rem;
+}
+
+.indicators__scroll-wrapper {
+    position: relative;
+    padding-right: 2rem;
+    width: 100%;
+    height: 50rem;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.indicators__found-posts {
+    font-size: 2.4rem;
+    color: #313131;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.indicators__all-measures-block {
+    margin-top: 3rem;
+}
+
+
+
+.indicators__new-row {
+    display: flex;
+
+}
+
+
+.indicators__new-left-col {
+    width: 50%;
+    padding: 0 3rem;
+    border-right: 1px solid rgba(white, .2);
+    padding-right: 5rem;
+}
+
+
+.indicators__new-right-col {
+    width: 50%;
+    padding: 0 3rem;
+    padding-left: 5rem;
+}
+
+
+.indicators__standard-card-item {
+    margin-bottom: 3.5rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+.indicators__graph-card-item {
+    padding-top: 2rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid rgba(white, .2);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+
+.indicators__graph-card-title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+
+.indicators__graph-card {
+    color: white;
+}
+
+.indicators__graph-card-amount {
+    font-size: 4.8rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    display: block;
+    line-height: 1;
+}
+
+
+.indicators__graph-card-amount-unit {
+    font-size: 3.6rem;
+    font-weight: 400;
+}
+
+
+.indicators__graph-card-image-container {
+    position: relative;
+
+    &::after {
+        content: '';
+        padding-bottom: 35%;
+        display: block;
+        width: 100%;
+    }
+
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include objectFitContain();
+    }
+}

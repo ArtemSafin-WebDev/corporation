@@ -1,0 +1,260 @@
+.contacts {
+    padding: 5rem 0;
+}
+
+
+
+
+.contacts__heading {
+    @include sectionHeading();
+    margin-bottom: 2rem;
+}
+
+
+.contacts__row {
+    display: flex;
+    margin: -4rem;
+}
+
+.contacts__col {
+    width: 50%;
+    padding: 4rem;
+}
+
+.contacts__team {
+    padding: 5rem 0;
+}
+
+.contacts__team-heading {
+    @include sectionHeading();
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+
+.contacts__team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -1.5rem;
+}
+
+.contacts__team-list-item {
+    width: 25%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contacts__team-card {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+.contacts__team-card-name {
+    font-weight: 400;
+    color: #313131;
+    font-size: 2.4rem;
+    
+}
+
+.contacts__team-card-image-container {
+    width: 45%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    position: relative;
+    border-radius: 50%;
+    background-color: $primary-color;
+    overflow: hidden;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        @include objectFitCover();
+    }
+}
+
+.contacts__team-divider {
+    height: 2px;
+    width: 4rem;
+    background-color: $primary-color;
+    border: none;
+    margin: .5rem 0;
+    display: inline-block;
+}
+
+
+
+
+.contacts__team-role {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+
+.contacts__team-link {
+    color: $primary-color;
+    font-size: 1.6rem;
+    display: block;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:link,
+    &:visited {
+        color: $primary-color;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.contacts__feedback {
+    padding: 5rem 0;
+    background-color: #f7f7f7;
+
+    .modal__form-label {
+        color: inherit;
+    }
+
+    .modal__form-input,
+    .modal__form-textarea {
+        background-color: white;
+        border-color: #c2c2c2;
+        color: inherit;
+        @include placeholder {
+            color: inherit;
+        }
+    }
+
+    .modal__form-row .wpcf7-list-item-label {
+        color: inherit;
+    }
+
+    .modal__form-row .wpcf7-list-item-label::before {
+        border-color: #c2c2c2;
+    }
+
+    .modal__form-submit {
+        @include btn();
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: white;
+        font-weight: initial;
+        text-transform: initial;
+        font-size: 1.6rem;
+    }
+
+    .wpcf7-display-none {
+        display: none !important;
+    }
+
+    div.wpcf7-response-output {
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        margin: 0 auto;
+        margin-top: 2rem;
+        display: inline-flex;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -1rem;
+    }
+
+    .modal__form-row {
+        width: 50%;
+        padding: 1rem;
+        margin: 0;
+        &:nth-child(4) {
+            width: 100%;
+        }
+        &:nth-child(5) {
+            width: 100%;
+            text-align: right;
+        }
+    }
+
+    .modal__form-row ~ p {
+        padding: 1rem;
+        width: 100%;
+        text-align: right;
+    }
+}
+
+.contacts__feedback-heading {
+    @include sectionHeading();
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contacts__feedback-wrapper {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+
+
+.contacts__blocks {
+    
+}
+
+
+.contacts__block {
+    display: flex;
+    margin: -1.5rem;
+    padding-bottom: 6rem;
+    &:last-child {
+        padding-bottom: 0;
+    }
+
+
+    &:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+}
+
+
+.contacts__block-left-col,
+.contacts__block-right-col {
+    width: 50%;
+    padding: 1.5rem;
+}
+
+
+.contacts__block-image-container {
+    position: relative;
+    background-color: $primary-color;
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include objectFitCover();
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 60%;
+    }
+}

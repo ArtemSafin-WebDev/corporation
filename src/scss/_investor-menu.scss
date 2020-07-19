@@ -1,0 +1,244 @@
+.investor-menu {
+    position: fixed;
+    top: 7rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    color: var(--primary-color, #00a6e0);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s, visibility 0s linear .2s;
+
+    .investor-menu-shown & {
+        opacity: 1;
+        visibility: visible;
+        transition: all .2s;
+    }
+}
+
+
+.investor-menu__content {
+   
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+    max-height: 100%;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+
+    @include breakpoint(mobile) {
+        padding-top: 4rem;
+    }
+}
+
+
+.investor-menu__link {
+    transition: color .2s;
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: .2rem;
+    &:link,
+    &:visited {
+        color: var(--text-color, #707070);
+    }
+
+    &:hover {
+        color: var(--primary-color, #00a6e0);
+    }
+}
+
+.investor-menu__nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4rem -1.5rem;
+    @include breakpoint(mobile) {
+        margin: -1rem -1.5rem;
+    }
+}
+
+
+.investor-menu__nav-block {
+    width: 33.33%;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    
+
+    width: 50%;
+
+
+    @include breakpoint(mobile) {
+        width: 50%;
+        padding: 1rem 1.5rem;
+    }
+}
+
+
+.investor-menu__nav-card-title {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    color: #313131;
+    font-weight: 400;
+    a {
+        &:link,
+        &:visited {
+            color: inherit;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+    }
+}
+
+
+.investor-menu__nav-card-link {
+    font-size: 1.6rem;
+    transition: color .2s;
+    &:link,
+    &:visited {
+        color: $text-color;
+    }
+
+    &:hover {
+        color: $primary-color;
+    }
+
+    
+}
+
+
+.investor-menu__nav-card-list-item {
+    margin-bottom: 0.5rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+}
+
+
+.investor-menu__row {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.investor-menu__nav-wrapper {
+    flex-basis: 50%;
+    @include breakpoint(mobile) {
+        flex-basis: auto;
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    
+}
+
+.investor-menu__btns {
+    flex-shrink: 0;
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+    a {
+        font-size: 1.8rem;
+        padding: 1.2rem 2rem;
+        margin-bottom: 1rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        flex-shrink: 1;
+    }
+}
+
+
+.investor-menu__photo-card {
+    display: flex;
+    
+    min-height: 32rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 72rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    padding: 4.5rem;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 3rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &--pasler {
+        background-image: url('../img/pasler-bg.jpg');
+    }
+
+    &--pet {
+        background-image: url('../img/petuchov-bg.jpg')
+    }
+
+
+    a {
+        margin-top: auto;
+        // align-self: flex-start;
+        text-align: center;
+    }
+
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        min-height: 20rem;
+        padding: 1.5rem;
+
+        .gubernator__contact-link {
+            font-size: 1.4rem;
+            padding: 0.5rem;
+        }
+    }
+}
+
+
+.investor-menu__photo-card-right-col {
+    width: 50%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.investor-menu__photo-card-image {
+    position: absolute;
+    width: 60%;
+    max-height: 90%;
+    left: -8rem;
+    bottom: 0;
+    @include objectFitContainBottom();
+}
+
+
+.investor-menu__photo-card-heading {
+    color: #313131;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1.4rem;
+    font-weight: 400;
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+    }
+}
+
+.investor-menu__photo-card-paragraph {
+    font-size: 2.2rem;
+    color: #4f5362;
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+    }
+    
+}

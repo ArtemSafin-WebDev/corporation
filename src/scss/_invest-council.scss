@@ -1,0 +1,260 @@
+.invest-council {
+    padding-top: 3.8rem;
+    padding-bottom: 5.1rem;
+    background: #f0f0f0;
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+}
+
+.invest-council__heading {
+    @include sectionHeading();
+    margin-bottom: 2.3rem;
+}
+
+.invest-council__row {
+    display: flex;
+    margin: -1rem -3rem;
+
+    @include breakpoint(mobile) {
+        flex-wrap: wrap;
+        margin: -1rem -1rem;
+    }
+}
+
+.invest-council__left-col,
+.invest-council__right-col {
+    width: 50%;
+    padding: 1rem 3rem;
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+.invest-council__content {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    font-family: $roboto;
+    color: #7f7f7f;
+    margin-bottom: 2rem;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+        margin-bottom: 3rem;
+        color: black;
+        font-family: $fira;
+        font-weight: 400;
+        @include breakpoint(mobile) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    p {
+        margin-bottom: 1.8rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include breakpoint(mobile) {
+            margin-bottom: 1.4rem;
+        }
+    }
+
+    ul {
+        margin-bottom: 3.3rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        li {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 0.5rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0.5rem;
+                width: 2.9rem;
+                height: 1.2rem;
+                background-size: contain;
+                background-image: url('../img/marker.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+.invest-council__file {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    max-width: 52rem;
+    svg {
+        width: 3.2rem;
+        height: 4rem;
+        flex-shrink: 0;
+        margin-right: 1.2rem;
+    }
+    &:link,
+    &:visited {
+        color: black;
+    }
+}
+
+.invest-council__guber {
+    display: flex;
+    color: black;
+    margin-bottom: 8.8rem;
+    align-items: center;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: initial;
+        margin-bottom: 4rem;
+    }
+}
+
+.invest-council__guber-photo-container {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 3rem;
+    width: 24.5rem;
+    flex-shrink: 0;
+    align-self: center;
+    background-color: darkgrey;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include objectFitCover();
+    }
+
+
+    @include breakpoint(mobile) {
+        
+        margin: 0 auto;
+        width: 18rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.invest-council__guber-content {
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.invest-council__guber-description {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.invest-council__guber-name {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+   
+    margin-bottom: 0.4rem;
+}
+
+.invest-council__role {
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}
+
+.invest-council__persons-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1.5rem -2.5rem;
+}
+
+.invest-council__persons-list-item {
+    width: 50%;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.invest-council__persons-card {
+    display: flex;
+    align-items: flex-start;
+    color: black;
+}
+
+.invest-council__persons-card-photo-container {
+    width: 12.2rem;
+    position: relative;
+    border-radius: 50%;
+    background-color: darkgrey;
+    flex-shrink: 0;
+    margin-right: 1.6rem;
+    overflow: hidden;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include objectFitCover();
+    }
+}
+
+.invest-council__persons-card-content {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.invest-council__persons-card-name {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    margin-bottom: 0.7rem;
+}
+
+.invest-council__persons-card-text {
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}

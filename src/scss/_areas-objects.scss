@@ -1,0 +1,225 @@
+.areas__objects {
+    margin-bottom: 8rem;
+
+
+    .ps__rail-y {
+       
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.areas__objects-heading {
+    @include sectionHeading();
+    margin-bottom: 2rem;
+}
+
+.areas__objects-row {
+    display: flex;
+    margin: -1rem;
+}
+
+.areas__objects-left-column,
+.areas__objects-right-column {
+    width: 50%;
+    padding: 1rem;
+}
+
+.areas__objects-nav {
+    position: relative;
+    width: 100%;
+    padding: 2rem 3rem;
+    margin: -2rem -3rem;
+    height: 70rem;
+}
+
+.areas__objects-gradient-wrapper {
+    position: relative;
+    &::before {
+        content: '';
+        height: 3rem;
+        position: absolute;
+        left: -2rem;
+        right: -2rem;
+        top: 0;
+        background: linear-gradient(to bottom, white 10%, rgba(white, .2), rgba(white, 0));
+        z-index: 100;
+    }
+    &::after {
+        content: '';
+        height: 3rem;
+        position: absolute;
+        left: -2rem;
+        right: -2rem;
+        bottom: 0;
+        background: linear-gradient(to top, white 10%, rgba(white, .2), rgba(white, 0));
+        z-index: 100;
+    }
+}
+
+.areas__objects-nav-item {
+    margin-bottom: 2rem;
+    // &:first-of-type {
+    //     margin-top: 4rem;
+    // }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.areas__objects-nav-card {
+    display: flex;
+    align-items: center;
+
+    font-family: $roboto;
+    font-size: 1.8rem;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    transition: all 0.2s;
+    background-color: #fff;
+    box-shadow: 0px 5px 20px rgba(black, 0.2);
+    &:link,
+    &:visited {
+        color: inherit;
+    }
+
+    &.active {
+        background-color: $primary-color;
+        &:link,
+        &:visited {
+            color: white;
+        }
+    }
+}
+
+.areas__objects-nav-card-photo {
+    position: relative;
+    background-color: #f1f8fe;
+    width: 26rem;
+    flex-shrink: 0;
+    // border-radius: 1.6rem;
+    // overflow: hidden;
+    &::before {
+        content: 'Превью';
+        font-size: 2rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: $primary-color;
+        font-family: $fira;
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 56.25%;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include objectFitCover();
+    }
+}
+
+.areas__objects-nav-card-content {
+    margin-left: 2rem;
+}
+
+.areas__objects-nav-card-title {
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 1rem 0;
+}
+
+.areas__objects-nav-card-text-content {
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.areas__objects-list {
+    position: relative;
+}
+
+.areas__objects-list-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0s linear 0.2s;
+    min-height: 100%;
+    &.active {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.2s;
+    }
+}
+
+.areas__objects-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.areas__objects-card-title {
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.areas__objects-text-content {
+    margin-top: 2rem;
+}
+
+.areas__objects-more-link {
+    background-color: $primary-color;
+    color: white;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    margin-top: 2rem;
+    display: inline-flex;
+    &:link,
+    &:visited {
+        color: white;
+    }
+}
+
+.areas__objects-photo {
+    position: relative;
+    margin-bottom: 2rem;
+    background-color: #f1f8fe;
+    &::before {
+        content: 'Превью';
+        font-size: 2rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: $primary-color;
+        font-family: $fira;
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 56.25%;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include objectFitCover();
+    }
+}
+

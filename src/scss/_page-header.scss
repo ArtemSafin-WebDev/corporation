@@ -1,0 +1,210 @@
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    color: white;
+    z-index: 3000;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    &--solid {
+        background-color: var(--primary-color, #00a6e0);
+        box-shadow: 0px 0px 15px rgba(black, 0.2);
+    }
+
+    &.filled {
+        background-color: var(--primary-color, #00a6e0);
+        box-shadow: 0px 0px 15px rgba(black, 0.2);
+    }
+
+    .investor-menu-shown & {
+        background-color: #fff;
+        color: var(--primary-color, #00a6e0);
+        box-shadow: none;
+    }
+}
+
+.page-header__row {
+    display: flex;
+    align-items: center;
+    height: 7rem;
+}
+
+.page-header__burger-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+// .page-header__nav-wrapper {
+//     width: 50%;
+//     flex-grow: 1;
+//     display: flex;
+//     align-items: center;
+// }
+
+.page-header__burger {
+    font-size: 1.4rem;
+
+    line-height: 1.7rem;
+}
+
+.page-header__burger-content {
+    display: flex;
+    align-items: center;
+}
+
+.page-header__burger-cross {
+    margin-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    & > span {
+        height: .3rem;
+        width: 2.8rem;
+        transition: transform 0.3s;
+        transform-origin: left center;
+        margin-bottom: .6rem;
+        background-color: #fff;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:nth-child(3) {
+            transform: scaleX(0.5);
+        }
+    }
+
+    .page-header__burger.active & {
+        & > span {
+            &:nth-child(1) {
+                transform: translateX(0) translateY(0.95rem) rotate(-45deg) scaleX(0.5);
+            }
+            &:nth-child(2) {
+            }
+            &:nth-child(3) {
+                transform: translateX(0) translateY(-0.95rem) rotate(45deg) scaleX(0.5);
+            }
+        }
+    }
+
+    .investor-menu-shown & > span {
+        background-color: var(--primary-color, #00a6e0);
+    }
+}
+
+.page-header__burger-text {
+    text-align: left;
+}
+
+.page-header__region-name {
+    margin-left: 16.5rem;
+
+    font-size: 3.6rem;
+    line-height: 4.3rem;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.page-header__feedback {
+    margin-left: 2.2rem;
+
+    padding: 1rem 1.4rem;
+    border: 1px solid white;
+
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    border-radius: 0.8rem;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &:hover {
+        color: var(--primary-color, #00a6e0);
+        border: 1px solid white;
+        background-color: #fff;
+    }
+
+    .investor-menu-shown & {
+        border-color: var(--primary-color, #00a6e0);
+        &:link,
+        &:visited {
+            color: var(--primary-color, #00a6e0);
+        }
+
+        &:hover {
+            background-color: var(--primary-color, #00a6e0);
+            color: white;
+        }
+    }
+}
+
+.page-header__language {
+    margin-left: 2.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    svg {
+        width: 0.6rem;
+        height: 0.6rem;
+        fill: white;
+        margin-left: .6rem;
+        position: relative;
+        bottom: -.1rem;
+    }
+    cursor: default;
+   
+
+    &:hover {
+        .page-header__language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: all 0.3s;
+        }
+    }
+}
+
+.page-header__language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding-top: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
+    transform: translateY(1rem);
+}
+
+.page-header__language-dropdown-content {
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(black, 0.2);
+    color: var(--primary-color, #00a6e0);
+}
+
+.page-header__language-dropdown-link {
+   
+
+  
+    &:link,
+    &:visited {
+        color: var(--primary-color, #00a6e0);
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

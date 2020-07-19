@@ -1,0 +1,39 @@
+.events {
+    padding: 5rem 0;
+}
+
+
+.events__heading {
+    @include sectionHeading();
+    margin-bottom: 2rem;
+}
+
+
+.events__row {
+    display: flex;
+    margin: -2rem -.8rem;
+}
+
+
+.events__left-column {
+    flex-shrink: 0;
+    width: 33.33%;
+    padding: 2rem .8rem;
+}
+
+
+.events__right-column {
+    width: 66.66%;
+    padding: 2rem .8rem;
+    .news-archive__list-item {
+        width: 50%;
+    }
+
+
+    .news-archive__details {
+        display: none;
+        .calendar-ready & {
+            display: inline-block;
+        }
+    }
+}

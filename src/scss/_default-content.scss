@@ -1,0 +1,103 @@
+.default-content {
+    font-size: 1.8rem;
+    & > * {
+        margin: 1.5rem 0;
+        &:first-child {
+            margin-top: 0 !important;
+        }
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    p:not([class]) {
+        margin-bottom: 1.5rem;
+    }
+
+    img:not([class]) {
+        margin: 1.5rem 0;
+    }
+
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 400;
+        margin-top: 1.5rem;
+        color: #313131;
+        line-height: 1.2;
+        strong {
+            font-weight: 400;
+        }
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+  
+
+    h1, h2, h3 {
+      
+        font-size: 2.4rem;
+    
+    }
+
+    h4, h5, h6 {
+        font-size: 2rem;
+        
+       
+    }
+
+    ul:not([class]) {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        & > li {
+            padding-left: 4.3rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            // margin-top: 0.5rem;
+            
+            &::before {
+                content: '';
+                width: 2.9rem;
+                height: 1.2rem;
+              
+                position: absolute;
+                left: 0;
+                top: .4rem;
+
+                top: .7rem;
+                background-image: url('../img/marker.svg');
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+                
+            }
+        }
+    }
+    ol:not([class]) {
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+        & > li {
+            display: flex;
+            align-items: baseline;
+            position: relative;
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            &::before {
+               color: $primary-color;
+               font-weight: 700;
+            }
+        }
+    }
+
+
+    a:not([class]) {
+        &:link,
+        &:visited {
+            color: var(--primary-color, #00a6e0);
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

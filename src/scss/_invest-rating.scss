@@ -1,0 +1,456 @@
+.invest-rating {
+    padding-top: 4.5rem;
+    padding-bottom: 1.8rem;
+    color: white;
+    background-color: $primary-color;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(to top, rgba(black, 0.2), rgba(black, 0.2)), url('../img/investrating-block-bg.jpg');
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+    }
+}
+
+.invest-rating__heading {
+    @include sectionHeading();
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.invest-rating__item {
+    margin-bottom: 2.9rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.invest-rating__card {
+    display: flex;
+
+    background-color: #fff;
+    color: #535859;
+    box-shadow: 0px 0.3rem 1rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.invest-rating__card-left-col,
+.invest-rating__card-right-col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 39rem;
+    @include breakpoint(mobile) {
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+.invest-rating__card-left-col {
+    background-color: $primary-color;
+}
+
+.invest-rating__card-main-info,
+.invest-rating__card-secondary-info {
+    padding: 2.2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    @include breakpoint(mobile) {
+        padding: 2rem;
+    }
+}
+
+.invest-rating__card-main-info {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    &--municipal {
+        background-image: url('../img/municipal-rating-bg.jpg');
+    }
+
+    &--national {
+        background-image: url('../img/national-rating-bg.jpg');
+    }
+}
+
+.invest-rating__card-title {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    padding-bottom: 1.9rem;
+    border-bottom: 0.2rem solid #4ba4db;
+    color: white;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+}
+
+.invest-rating__card-text {
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: white;
+    font-family: $roboto;
+    margin-bottom: 2rem;
+    p:not([class]) {
+        margin-bottom: 1.5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.invest-rating__card-links {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+.invest-rating__card-link {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: white;
+    padding: 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 0.8rem;
+    align-self: flex-start;
+    text-align: center;
+    transition: background-color 0.2s;
+    margin-bottom: 1.5rem;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: rgba(white, 0.2);
+    }
+}
+
+.invest-rating__card-features {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.invest-rating__card-places {
+    // flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2.9rem;
+    margin-top: auto;
+    padding-top: 1rem;
+
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns: 1fr 4rem 1fr 1.5rem 1fr;
+        grid-template-rows: 1fr minmax(4fr, auto) minmax(11rem, auto);
+        @include breakpoint(mobile) {
+            grid-template-columns: 1fr 1.5rem 1fr 1.5rem 1fr;
+        }
+    }
+}
+
+.invest-rating__card-first-place,
+.invest-rating__card-second-place,
+.invest-rating__card-third-place {
+    flex-basis: 33.33%;
+
+    @supports (display: grid) {
+        width: 100%;
+    }
+}
+
+.invest-rating__card-first-place {
+    background: #414f7e;
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem 1.5rem;
+    color: white;
+    min-height: 22.2rem;
+    margin-top: auto;
+    grid-column: 2 / 5;
+    grid-row: 1 / -1;
+
+    @include breakpoint(mobile) {
+        min-height: 18rem;
+    }
+}
+
+.invest-rating__card-third-place {
+    padding: 0.8rem 1.5rem;
+    background: #c7c7ca;
+    border-radius: 0.8rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    min-height: 10.9rem;
+    grid-column: 1 / 3;
+    grid-row: 3 / -1;
+    position: relative;
+    z-index: 10;
+}
+
+.invest-rating__card-third-place-city {
+    margin-top: auto;
+    margin-right: auto;
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    @include breakpoint(mobile) {
+        font-size: 2rem; line-height: 1.2;
+    }
+}
+
+.invest-rating__card-place-number {
+    margin-bottom: auto;
+    margin-right: auto;
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}
+
+.invest-rating__card-second-place {
+    background: #29abe2;
+    color: white;
+    border-radius: 0.8rem;
+    min-height: 14.8rem;
+    margin-top: auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    grid-column: 4 / 6;
+    grid-row: 2 / -1;
+    position: relative;
+    z-index: 10;
+}
+
+.invest-rating__card-second-place-city {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    text-transform: uppercase;
+    margin-top: auto;
+    margin-right: auto;
+    @include breakpoint(mobile) {
+        font-size: 2rem; line-height: 1.2;
+    }
+}
+
+.invest-rating__card-first-place-city {
+    font-size: 3.6rem;
+    line-height: 4.3rem;
+    text-transform: uppercase;
+    margin: auto;
+    margin-bottom: 1.4rem;
+    @include breakpoint(mobile) {
+        font-size: 2.6rem; line-height: 1.2;
+    }
+}
+
+.invest-rating__card-numbers {
+    display: flex;
+    align-items: center;
+    padding-top: 2.2rem;
+    border-top: 0.2rem solid #4ba4db;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: initial;
+    }
+}
+
+.invest-rating__card-numbers-row {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+    @include breakpoint(mobile) {
+        flex-wrap: wrap;
+        align-items: initial;
+    }
+}
+
+.invest-rating__card-numbers-item {
+    display: flex;
+    align-items: flex-start;
+    flex-basis: 20%;
+    margin-right: 2rem;
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @include breakpoint(mobile) {
+        flex-basis: 50%;
+        margin: 0;
+        padding-right: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.invest-rating__card-numbers-amount {
+    font-weight: 500;
+    font-size: 6.4rem;
+    line-height: 1;
+    color: #535859;
+    margin-right: 1rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+    position: relative;
+
+
+    @include breakpoint(mobile) {
+        font-size: 5rem;
+    }
+}
+
+.invest-rating__card-numbers-amount-unit {
+    left: 100%;
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 1;
+    position: absolute;
+    bottom: .12em;
+    color: #535859;
+    text-transform: lowercase;
+    margin-left: 1rem;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        bottom: .6rem;
+    }
+}
+
+.invest-rating__card-numbers-text {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    color: #ababab;
+    text-transform: lowercase;
+    margin-top: 0.3em;
+}
+
+.invest-rating__card-numbers-show {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    padding: 1rem;
+    color: #535859;
+    text-align: center;
+
+    border: 1px solid #535859;
+
+    border-radius: 0.8rem;
+    margin-left: 2rem;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    &:link,
+    &:visited {
+        color: #535859;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: white;
+        background-color: $primary-color;
+        border-color: $primary-color;
+    }
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        align-self: flex-start;
+       
+    }
+}
+
+.invest-rating__card-indicators-heading {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: #000000;
+}
+
+.invest-rating__card-indicators-card {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 1.2rem 0;
+
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+
+.invest-rating__card-indicators-card-icon-container {
+    width: 3.2rem;
+    height: 3.2rem;
+    flex-shrink: 0;
+    position: relative;
+    margin-right: 1.6rem;
+    margin-top: 0.4rem;
+}
+
+.invest-rating__card-indicators-card-icon {
+    width: 100%;
+    height: 100%;
+    @include objectFitContain();
+    display: block;
+}
+
+.invest-rating__card-indicators-content {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.invest-rating__card-indicators-item:last-child {
+    .invest-rating__card-indicators-card {
+        border-bottom: none;
+    }
+}
+
+.invest-rating__card-indicators-left-col {
+    width: 50%;
+
+    .invest-rating__card-indicators-item {
+        padding-right: 2rem;
+        @include breakpoint(mobile) {
+            padding: 0;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.invest-rating__card-indicators-right-col {
+    width: 50%;
+    border-left: 1px solid #f0f0f0;
+    .invest-rating__card-indicators-item {
+        padding-left: 2rem;
+        @include breakpoint(mobile) {
+            padding: 0;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        border: none;
+    }
+}
+
+.invest-rating__card-asi-logo {
+    width: 15.2rem;
+    height: auto;
+    margin-left: auto;
+}

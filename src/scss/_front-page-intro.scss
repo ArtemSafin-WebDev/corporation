@@ -1,0 +1,121 @@
+.front-page-intro {
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    padding: 16rem 0;
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-color;
+    background-image: url('../img/grid-pattern.svg'), url('../img/mills-bg.jpg');
+    background-position: 0 4.8rem, center;
+    background-repeat: repeat-x, no-repeat;
+    background-size: 100% auto, cover;
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        .inner-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @include breakpoint(desktop) {
+        min-height: 90rem;
+    }
+
+    @include breakpoint(laptop) {
+        min-height: 90rem;
+    }
+
+    @include breakpoint(mobile) {
+        min-height: 75rem;
+    }
+}
+
+
+
+.front-page-intro__content {
+    margin: auto;
+    margin-left: 26.8rem;
+    text-align: left;
+    width: 100%;
+
+    @include breakpoint(mobile) {
+        margin: auto 0;
+    }
+}
+
+.front-page-intro__main-heading {
+    font-weight: 400;
+
+    font-size: 7.2rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    @include breakpoint(mobile) {
+        font-size: 5rem;
+        br {
+            display: none;
+        }
+    }
+}
+
+.front-page-intro__text {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+
+    margin-bottom: 5.4rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+    p:not([class]) {
+        margin: 1.5rem 0;
+    }
+
+    & > * {
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.front-page-intro__open-business {
+    @include btn();
+    display: inline-block;
+
+    background-color: #fff;
+
+    // text-transform: uppercase;
+    &:link,
+    &:visited {
+        color: var(--primary-color, #00a6e0);
+    }
+
+    &:hover {
+        background-color: var(--primary-color, #00a6e0);
+        color: white;
+    }
+}
+
+.front-page-intro__scroll-down {
+    position: absolute;
+    bottom: 5.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    svg {
+        fill: rgba(white, 0.5);
+        transition: fill 0.2s;
+        width: 3rem;
+        height: 6rem;
+    }
+
+    &:hover {
+        svg {
+            fill: rgba(white, 0.8);
+        }
+    }
+}

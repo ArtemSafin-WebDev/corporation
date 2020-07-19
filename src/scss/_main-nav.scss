@@ -1,0 +1,36 @@
+.main-nav {
+    margin-left: auto;
+}
+
+.main-nav__list {
+    display: flex;
+    align-items: center;
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.main-nav__list-item {
+    margin-right: 2.2rem;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.main-nav__link {
+    transition: color 0.2s;
+
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .investor-menu-shown & {
+        &:link,
+        &:visited {
+            color: var(--primary-color, #00a6e0);
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.page-title {
+    background-color: var(--primary-color, #00a6e0);
+    color: white;
+  
+    margin-top: 7rem;
+    position: relative;
+    z-index: 1;
+}
+
+
+.page-title__content { 
+    text-align: left;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    @include breakpoint(mobile) {
+        min-height: 23rem;
+    }
+}
+
+
+.page-title__heading {
+    
+
+    font-size: 7.2rem;
+
+    line-height: 1.2;
+    font-weight: 400;
+    @include breakpoint(mobile) {
+        font-size: 4.5rem;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+}
+
+
+.page-title__bg-image-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+   
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: linear-gradient(to top right, rgba(black, .6), rgba(black, 0.1));
+        
+        z-index: -1;
+    }
+}
+
+
+.page-title__bg-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    @include objectFitCover();
+    position: relative;
+    z-index: -2;
+}

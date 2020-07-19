@@ -1,0 +1,24 @@
+.breadcrumbs {
+    font-size: 2.4rem;
+
+    margin-top: 1.2rem;
+}
+
+.breadcrumbs__link {
+    &:link,
+    &:visited {
+        color: $primary-color;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.breadcrumbs {
+    margin: 0;
+    .breadcrumbs {
+        margin: 0;
+    }
+}
