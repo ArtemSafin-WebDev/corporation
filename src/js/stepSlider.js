@@ -14,6 +14,7 @@ export default function() {
                 nextEl: slider.querySelector('.schema__steps-btn--next'),
                 prevEl: slider.querySelector('.schema__steps-btn--prev')
             },
+            autoHeight: window.matchMedia("(max-width: 568px)").matches ? true : false,
             init: false
         });
 

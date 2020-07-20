@@ -14,12 +14,22 @@
 
     .advantages__card-content {
         margin-bottom: 4.8rem;
+        @include breakpoint(mobile) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
     }
 }
 
 .regional-competence__heading {
     @include sectionHeading();
     margin-bottom: 4.4rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
 }
 
 .regional-competence__info-card-heading {
