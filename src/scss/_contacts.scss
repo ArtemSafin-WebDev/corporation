@@ -1,28 +1,38 @@
 .contacts {
     padding: 5rem 0;
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
 }
-
-
-
 
 .contacts__heading {
     @include sectionHeading();
     margin-bottom: 2rem;
 }
 
-
 .contacts__row {
     display: flex;
     margin: -4rem;
+    @include breakpoint(mobile) {
+        margin: -2rem;
+    }
 }
 
 .contacts__col {
     width: 50%;
     padding: 4rem;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 2rem;
+    }
 }
 
 .contacts__team {
     padding: 5rem 0;
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
 }
 
 .contacts__team-heading {
@@ -30,7 +40,6 @@
     margin-bottom: 4rem;
     text-align: center;
 }
-
 
 .contacts__team-list {
     display: flex;
@@ -46,18 +55,15 @@
     flex-direction: column;
 }
 
-
 .contacts__team-card {
     flex-grow: 1;
     text-align: center;
 }
 
-
 .contacts__team-card-name {
     font-weight: 400;
     color: #313131;
     font-size: 2.4rem;
-    
 }
 
 .contacts__team-card-image-container {
@@ -91,12 +97,9 @@
     width: 4rem;
     background-color: $primary-color;
     border: none;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     display: inline-block;
 }
-
-
-
 
 .contacts__team-role {
     text-transform: uppercase;
@@ -104,12 +107,11 @@
     margin-bottom: 1rem;
 }
 
-
 .contacts__team-link {
     color: $primary-color;
     font-size: 1.6rem;
     display: block;
-    
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -122,7 +124,6 @@
         text-decoration: underline;
     }
 }
-
 
 .contacts__feedback {
     padding: 5rem 0;
@@ -210,34 +211,41 @@
     margin: 0 auto;
 }
 
-
-
 .contacts__blocks {
-    
 }
-
 
 .contacts__block {
     display: flex;
     margin: -1.5rem;
     padding-bottom: 6rem;
+    flex-wrap: wrap;
     &:last-child {
         padding-bottom: 0;
     }
 
-
     &:nth-child(odd) {
         flex-direction: row-reverse;
     }
-}
 
+    strong {
+        font-weight: 500;
+        font-size: 2.6rem;
+    }
+
+
+    @include breakpoint(mobile) {
+        padding-bottom: 2rem;
+    }
+}
 
 .contacts__block-left-col,
 .contacts__block-right-col {
     width: 50%;
     padding: 1.5rem;
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
 }
-
 
 .contacts__block-image-container {
     position: relative;

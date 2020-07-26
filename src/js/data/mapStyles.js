@@ -1,7 +1,7 @@
 const mapStyles = [
     { featureType: 'landscape.natural', elementType: 'geometry.fill', stylers: [{ color: '#ffffff' }] },
     { featureType: 'landscape.natural', elementType: 'geometry.stroke', stylers: [{ color: '#d9d9d9' }] },
-    { featureType: 'landscape.natural.landcover', elementType: 'geometry.fill', stylers: [{ color: '#95eb34' }] },
+    // { featureType: 'landscape.natural.landcover', elementType: 'geometry.fill', stylers: [{ color: '#95eb34' }] },
     {
         featureType: 'landscape.man_made',
         elementType: 'geometry.fill',

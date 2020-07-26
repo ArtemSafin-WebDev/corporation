@@ -2,21 +2,38 @@
     padding-top: 12rem;
     color: black;
     padding-bottom: 7rem;
+    @include breakpoint(mobile) {
+        padding-top: 10rem;
+        padding-bottom: 3rem;
+    }
 }
 
 .govsupport-single__row {
     display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
 }
 
 .govsupport-single__main {
     width: 50%;
     flex-grow: 1;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 .govsupport-single__sidebar {
     width: 53.6rem;
     flex-shrink: 0;
     margin-left: 15.5rem;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+        margin: 0;
+    }
 }
 
 .govsupport-single__title {
@@ -24,12 +41,23 @@
     line-height: 4.3rem;
     padding-bottom: 4rem;
     font-weight: 400;
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1.2;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
 }
 
 .govsupport-single__content {
     border-top: 2px solid #4ba4db;
     padding-top: 4.5rem;
     padding-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+
 }
 
 .govsupport-single__other-heading {
@@ -38,6 +66,11 @@
     font-weight: 400;
     padding-bottom: 1.8rem;
     border-bottom: 2px solid #4ba4db;
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 1.2;
+        padding-bottom: 1.2rem;
+    }
 }
 
 .govsupport-single__other-card {
@@ -56,6 +89,10 @@
 
     &:hover {
         color: $primary-color;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
     }
 }
 
@@ -80,6 +117,12 @@
 .govsupport-single__content {
     font-size: 2.4rem;
     line-height: 2.9rem;
+
+    @include breakpoint(mobile) {
+      
+        font-size: 2rem;
+        line-height: 1.2;
+    }
     h1,
     h2,
     h3,
@@ -95,6 +138,13 @@
         &:first-child {
             margin-top: 0;
         }
+
+        @include breakpoint(mobile) {
+            margin-top: 2rem;
+        }
+
+
+      
     }
 
     strong {
@@ -119,12 +169,19 @@
             vertical-align: top;
             border: none;
             padding-right: 3rem;
+            @include breakpoint(mobile) {
+                padding-right: 2rem;
+            }
         }
 
         th {
             font-weight: 400;
             font-size: 2.4rem;
             line-height: 2.9rem;
+            @include breakpoint(mobile) {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
         }
 
         thead {
@@ -140,6 +197,10 @@
             font-weight: 300;
             font-size: 2.4rem;
             line-height: 2.9rem;
+            @include breakpoint(mobile) {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
         }
 
         tbody {
@@ -158,8 +219,7 @@
                 }
             }
 
-            tr {
-            }
+          
         }
     }
 
@@ -227,6 +287,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 4rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
 }
 
 .govsupport-single__category-card-icon-container {

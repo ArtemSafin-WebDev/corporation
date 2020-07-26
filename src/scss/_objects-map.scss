@@ -4,18 +4,32 @@
     padding-top: 10rem;
     background-color: #414f7e;
     color: white;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+        padding-bottom: 0;
+        padding-top: 10rem;
+    }
 }
 
 .objects-map__heading {
     @include sectionHeading();
     margin-bottom: 2.5rem;
     color: white;
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
 }
 
 .objects-map__filters {
     display: flex;
     align-items: center;
     margin-bottom: 2.5rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+        flex-direction: column;
+        align-items: initial;
+    }
 }
 
 .objects-map__filters-group-name {
@@ -45,6 +59,11 @@
             transition: all 0.3s;
         }
     }
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
 }
 
 .objects-map__filters-group-dropdown {
@@ -57,6 +76,11 @@
     transition: opacity 0.3s, visibility 0s linear 0.3s;
     padding-top: 1rem;
     z-index: 100;
+
+    @include breakpoint(mobile) {
+        min-width: auto;
+        width: 100%;
+    }
 }
 
 .objects-map__filters-from {
@@ -105,15 +129,27 @@
 
 .objects-map__row {
     display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
 }
 
 .objects-map__list-column {
     width: 33.33%;
     padding-right: 3rem;
+    @include breakpoint(mobile) {
+        padding: 0;
+        width: 100%;
+    }
 }
 
 .objects-map__map-column {
     width: 66.66%;
+    @include breakpoint(mobile) {
+        width: 100%;
+        order: -1;
+        margin-bottom: 3rem;
+    }
 }
 
 .objects-map__objects-card {
@@ -230,6 +266,14 @@
     &:hover {
         background-color: rgba(white, 0.2);
     }
+
+
+    @include breakpoint(mobile) {
+        order: 2;
+        margin-top: 1rem;
+        align-self: flex-start;
+        text-align: center;
+    }
 }
 
 .objects-map__objects-card-content {
@@ -258,12 +302,28 @@
     display: flex;
     align-items: center;
     margin-top: 0.8rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: initial;
+    }
 }
 
 .objects-map__map-container {
     width: 100%;
     height: 70vh;
     position: relative;
+
+    @include breakpoint(mobile) {
+        height: auto;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: 80%;
+        }
+    }
 }
 
 .objects-map__map {
@@ -437,6 +497,10 @@
     height: 70vh;
     display: flex;
     flex-direction: column;
+
+    @include breakpoint(mobile) {
+        height: 50vh;
+    }
 }
 
 .objects-map__objects-list-scroll-wrapper {

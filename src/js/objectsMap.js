@@ -1,5 +1,6 @@
 import mapStyles from './data/mapStyles';
 import regionBoundary from './data/region';
+import detectIt from 'detect-it';
 
 import Axios from 'axios';
 import MarkerClusterer from '@google/markerclustererplus';
@@ -698,14 +699,20 @@ export default function() {
 
         async function initializeMap() {
             mapInstance = new google.maps.Map(mapElement, {
-                zoom: 6,
+                zoom: window.matchMedia("(max-width: 568px)").matches ? 5 : 6,
                 streetViewControl: false,
                 fullscreenControl: false,
+                mapTypeControl: window.matchMedia("(max-width: 568px)").matches ? false : true,
                 styles: mapStyles
             });
 
             mapInstance.setCenter(mapCenter);
-            mapInstance.setOptions({ minZoom: 6, maxZoom: 15 });
+
+
+            if (!window.matchMedia("(max-width: 568px)").matches) {
+                mapInstance.setOptions({ minZoom: 6, maxZoom: 15 });
+            }
+           
 
             mapInstance.data.setStyle(feature => {
                 const { fillColor, strokeColor, fillOpacity, strokeOpacity, strokeWeight } = feature.getProperty('styles');
@@ -756,11 +763,15 @@ export default function() {
                 });
             });
 
-            customScrollInstance = new PerfectScrollbar(objectsScrollWrapper, {
-                wheelSpeed: 5,
-                wheelPropagation: false,
-                minScrollbarLength: 238
-            });
+            if (window.matchMedia("(min-width: 569px)").matches && !detectIt.hasTouch) {
+                customScrollInstance = new PerfectScrollbar(objectsScrollWrapper, {
+                    wheelSpeed: 2,
+                    wheelPropagation: false,
+                    minScrollbarLength: 238
+                });
+            }
+
+           
 
             bindFilters();
 

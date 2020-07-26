@@ -1,5 +1,8 @@
 .events {
     padding: 5rem 0;
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
 }
 
 
@@ -11,6 +14,7 @@
 
 .events__row {
     display: flex;
+    flex-wrap: wrap;
     margin: -2rem -.8rem;
 }
 
@@ -19,6 +23,10 @@
     flex-shrink: 0;
     width: 33.33%;
     padding: 2rem .8rem;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
 }
 
 
@@ -27,6 +35,9 @@
     padding: 2rem .8rem;
     .news-archive__list-item {
         width: 50%;
+        @include breakpoint(mobile) {
+            width: 100%;
+        }
     }
 
 
@@ -35,5 +46,9 @@
         .calendar-ready & {
             display: inline-block;
         }
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
     }
 }

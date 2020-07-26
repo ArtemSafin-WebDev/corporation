@@ -2,6 +2,9 @@
 .areas__feedback {
     padding: 5rem 0;
     background-color: #f7f7f7;
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+    }
 
     .modal__form-label {
         color: inherit;
@@ -67,6 +70,10 @@
         &:nth-child(7) {
             width: 100%;
             text-align: right;
+        }
+
+        @include breakpoint(mobile) {
+            width: 100%;
         }
     }
 

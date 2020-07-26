@@ -1,8 +1,9 @@
 .object-card {
     padding: 5rem 0;
-  
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
 }
-
 
 .object-card__heading {
     @include sectionHeading();
@@ -15,17 +16,23 @@
     line-height: 1.3;
 }
 
-
 .object-card__general-info-list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -.4rem;
+    margin: 0 -0.4rem;
+    @include breakpoint(mobile) {
+        margin: -.5rem;
+    }
 }
 
-
 .object-card__general-info-list-item {
-    padding: 0 .4rem;
+    padding: 0 0.4rem;
     width: 50%;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: .5rem;
+    }
 }
 .object-card__general-info-card {
     font-size: 2.2rem;
@@ -33,7 +40,6 @@
     font-weight: 300;
     line-height: 1.2;
 }
-
 
 .object-card__description-text {
     font-family: $fira;
@@ -72,22 +78,31 @@
 
 .object-card__infra {
     margin-top: 4rem;
+    @include breakpoint(mobile) {
+        margin-top: 3rem;
+    }
 }
 
 .object-card__infra-list {
     display: flex;
     flex-wrap: wrap;
     margin: -2rem;
+    @include breakpoint(mobile) {
+        margin: -1rem;
+    }
 }
-
 
 .object-card__infra-list-item {
     width: 33.33%;
     display: flex;
     flex-direction: column;
     padding: 2rem;
-}
 
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 1rem;
+    }
+}
 
 .object-card__infra-card {
     padding: 2.5rem 3rem;
@@ -95,7 +110,6 @@
     border-radius: 1rem;
     position: relative;
 }
-
 
 .object-card__dashed-frame {
     position: absolute;
@@ -106,7 +120,7 @@
 
     rect {
         width: calc(100% - 4px);
-        height: calc(100% - 4px)
+        height: calc(100% - 4px);
     }
 }
 
@@ -133,6 +147,9 @@
     font-size: 5rem;
     line-height: 1.2;
     max-width: 100rem;
+    @include breakpoint(mobile) {
+        font-size: 3.8rem;
+    }
 }
 
 .object-card__infra-card-icon {
@@ -151,13 +168,12 @@
     // color: #313131;
 }
 
-
 .object-card__infra-card-bottom-row {
     margin-top: 2rem;
 }
 
-.object-card__infra-card-features-list{}
-
+.object-card__infra-card-features-list {
+}
 
 .object-card__infra-card-features-list-item {
     margin-bottom: 3rem;
@@ -166,7 +182,6 @@
     }
 }
 
-
 .object-card__infra-card-features-card {
     display: flex;
     flex-direction: column;
@@ -174,10 +189,10 @@
     // min-height: 20rem;
     padding: 1rem 1.8rem;
     border-radius: 1rem;
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     border-top-right-radius: 0;
     position: relative;
-    box-shadow: 0 .6rem .9rem rgba(black, .1);
+    box-shadow: 0 0.6rem 0.9rem rgba(black, 0.1);
     &::before {
         content: '';
         position: absolute;
@@ -187,7 +202,6 @@
         height: 2rem;
         background-color: $primary-color;
     }
-
 
     .object-card__infra-card--electricity & {
         &::before {
@@ -216,7 +230,6 @@
     }
 }
 
-
 .object-card__infra-card-features-card-text {
     font-size: 2.4rem;
     line-height: 1.1;
@@ -224,13 +237,11 @@
     font-weight: 300;
 }
 
-
 .object-card__infra-card-features-card-amount {
     display: flex;
     align-items: baseline;
     color: $text-color;
 }
-
 
 .object-card__infra-card-features-card-amount-digit {
     font-weight: 700;
@@ -240,33 +251,32 @@
     // letter-spacing: .05em;
 }
 
-
 .object-card__infra-card-features-card-amount-units {
     font-size: 2.4rem;
     font-weight: 300;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
 }
-
 
 .object-card__common-info {
     margin-bottom: 2rem;
 }
-
 
 .object-card__map-container {
     position: relative;
     background-color: $primary-color;
     height: 70vh;
     margin-top: 5rem;
-    // &::after {
-    //     content: '';
-    //     padding-bottom: 56.25%;
-    //     display: block;
-    //     width: 100%;
-    // }
+    @include breakpoint(mobile) {
+        height: auto;
+        margin-top: 3rem;
+        &::after {
+            content: '';
+            padding-bottom: 75%;
+            display: block;
+            width: 100%;
+        }
+    }
 }
-
-
 
 .object-card__map {
     position: absolute;

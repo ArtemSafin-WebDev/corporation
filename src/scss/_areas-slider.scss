@@ -6,6 +6,15 @@
     .swiper-slide {
         display: flex;
         flex-direction: column;
+        @include breakpoint(mobile) {
+            width: 90%;
+        }
+    }
+
+    .swiper-container {
+        @include breakpoint(mobile) {
+            overflow: visible;
+        }
     }
 }
 

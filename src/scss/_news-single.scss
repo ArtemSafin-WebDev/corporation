@@ -212,6 +212,9 @@
 
 .news-single__title {
     padding-bottom: 3rem;
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
 }
 
 

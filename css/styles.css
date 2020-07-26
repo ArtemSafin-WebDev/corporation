@@ -6485,6 +6485,9 @@ span.wpcf7-not-valid-tip {
 
 .contacts {
   padding: 5rem 0; }
+  @media only screen and (max-width: 767px) {
+    .contacts {
+      padding: 3rem 0; } }
 
 .contacts__heading {
   font-weight: 400;
@@ -6496,13 +6499,23 @@ span.wpcf7-not-valid-tip {
 .contacts__row {
   display: flex;
   margin: -4rem; }
+  @media only screen and (max-width: 767px) {
+    .contacts__row {
+      margin: -2rem; } }
 
 .contacts__col {
   width: 50%;
   padding: 4rem; }
+  @media only screen and (max-width: 767px) {
+    .contacts__col {
+      width: 100%;
+      padding: 2rem; } }
 
 .contacts__team {
   padding: 5rem 0; }
+  @media only screen and (max-width: 767px) {
+    .contacts__team {
+      padding: 3rem 0; } }
 
 .contacts__team-heading {
   font-weight: 400;
@@ -6564,7 +6577,7 @@ span.wpcf7-not-valid-tip {
   width: 4rem;
   background-color: #49A2DC;
   border: none;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   display: inline-block; }
 
 .contacts__team-role {
@@ -6662,16 +6675,27 @@ span.wpcf7-not-valid-tip {
 .contacts__block {
   display: flex;
   margin: -1.5rem;
-  padding-bottom: 6rem; }
+  padding-bottom: 6rem;
+  flex-wrap: wrap; }
   .contacts__block:last-child {
     padding-bottom: 0; }
   .contacts__block:nth-child(odd) {
     flex-direction: row-reverse; }
+  .contacts__block strong {
+    font-weight: 500;
+    font-size: 2.6rem; }
+  @media only screen and (max-width: 767px) {
+    .contacts__block {
+      padding-bottom: 2rem; } }
 
 .contacts__block-left-col,
 .contacts__block-right-col {
   width: 50%;
   padding: 1.5rem; }
+  @media only screen and (max-width: 767px) {
+    .contacts__block-left-col,
+    .contacts__block-right-col {
+      width: 100%; } }
 
 .contacts__block-image-container {
   position: relative;
@@ -6700,6 +6724,12 @@ span.wpcf7-not-valid-tip {
   .areas__slider .swiper-slide {
     display: flex;
     flex-direction: column; }
+    @media only screen and (max-width: 767px) {
+      .areas__slider .swiper-slide {
+        width: 90%; } }
+  @media only screen and (max-width: 767px) {
+    .areas__slider .swiper-container {
+      overflow: visible; } }
 
 .areas__slider-heading {
   font-weight: 400;
@@ -6981,6 +7011,9 @@ span.wpcf7-not-valid-tip {
 .areas__feedback {
   padding: 5rem 0;
   background-color: #f7f7f7; }
+  @media only screen and (max-width: 767px) {
+    .areas__feedback {
+      padding: 4rem 0; } }
   .areas__feedback .modal__form-label {
     color: inherit; }
   .areas__feedback .modal__form-input, .areas__feedback .modal__form-textarea {
@@ -7033,6 +7066,9 @@ span.wpcf7-not-valid-tip {
     .areas__feedback .modal__form-row:nth-child(7) {
       width: 100%;
       text-align: right; }
+    @media only screen and (max-width: 767px) {
+      .areas__feedback .modal__form-row {
+        width: 100%; } }
   .areas__feedback .modal__form-row ~ p {
     padding: 1rem;
     width: 100%;
@@ -7055,11 +7091,20 @@ span.wpcf7-not-valid-tip {
   padding-bottom: 4rem; }
   .news-archive--sym {
     padding: 4rem 0; }
+    @media only screen and (max-width: 767px) {
+      .news-archive--sym {
+        padding: 2rem 0; } }
+  @media only screen and (max-width: 767px) {
+    .news-archive {
+      padding-bottom: 2rem; } }
 
 .news-archive__list {
   display: flex;
   flex-wrap: wrap;
   margin: -2rem -.8rem; }
+  @media only screen and (max-width: 767px) {
+    .news-archive__list {
+      margin: -2rem; } }
 
 .news-archive__heading {
   font-weight: 400;
@@ -7086,6 +7131,10 @@ span.wpcf7-not-valid-tip {
   padding: 2rem 0.8rem; }
   .news-archive__list-item--half-width {
     width: 50%; }
+  @media only screen and (max-width: 767px) {
+    .news-archive__list-item {
+      width: 100%;
+      padding: 2rem; } }
 
 .news-archive__year-divider {
   width: 100%;
@@ -7535,6 +7584,11 @@ span.wpcf7-not-valid-tip {
   padding-top: 10rem;
   background-color: #414f7e;
   color: white; }
+  @media only screen and (max-width: 767px) {
+    .objects-map {
+      padding: 3rem 0;
+      padding-bottom: 0;
+      padding-top: 10rem; } }
 
 .objects-map__heading {
   font-weight: 400;
@@ -7543,11 +7597,19 @@ span.wpcf7-not-valid-tip {
   color: #000000;
   margin-bottom: 2.5rem;
   color: white; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__heading {
+      margin-bottom: 2rem; } }
 
 .objects-map__filters {
   display: flex;
   align-items: center;
   margin-bottom: 2.5rem; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__filters {
+      margin-bottom: 2rem;
+      flex-direction: column;
+      align-items: initial; } }
 
 .objects-map__filters-group-name {
   font-size: 1.8rem;
@@ -7571,6 +7633,10 @@ span.wpcf7-not-valid-tip {
     opacity: 1;
     visibility: visible;
     transition: all 0.3s; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__filters-group {
+      margin: 0;
+      margin-bottom: 1rem; } }
 
 .objects-map__filters-group-dropdown {
   position: absolute;
@@ -7582,6 +7648,10 @@ span.wpcf7-not-valid-tip {
   transition: opacity 0.3s, visibility 0s linear 0.3s;
   padding-top: 1rem;
   z-index: 100; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__filters-group-dropdown {
+      min-width: auto;
+      width: 100%; } }
 
 .objects-map__filters-from {
   font-size: 1.4rem; }
@@ -7621,13 +7691,25 @@ span.wpcf7-not-valid-tip {
 
 .objects-map__row {
   display: flex; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__row {
+      flex-direction: column; } }
 
 .objects-map__list-column {
   width: 33.33%;
   padding-right: 3rem; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__list-column {
+      padding: 0;
+      width: 100%; } }
 
 .objects-map__map-column {
   width: 66.66%; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__map-column {
+      width: 100%;
+      order: -1;
+      margin-bottom: 3rem; } }
 
 .objects-map__objects-card {
   position: relative;
@@ -7713,6 +7795,12 @@ span.wpcf7-not-valid-tip {
     color: white; }
   .objects-map__objects-card-more:hover {
     background-color: rgba(255, 255, 255, 0.2); }
+  @media only screen and (max-width: 767px) {
+    .objects-map__objects-card-more {
+      order: 2;
+      margin-top: 1rem;
+      align-self: flex-start;
+      text-align: center; } }
 
 .objects-map__objects-card-content {
   width: 50%;
@@ -7736,11 +7824,23 @@ span.wpcf7-not-valid-tip {
   display: flex;
   align-items: center;
   margin-top: 0.8rem; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__objects-card-more-wrapper {
+      flex-direction: column;
+      align-items: initial; } }
 
 .objects-map__map-container {
   width: 100%;
   height: 70vh;
   position: relative; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__map-container {
+      height: auto; }
+      .objects-map__map-container::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 80%; } }
 
 .objects-map__map {
   position: absolute;
@@ -7893,6 +7993,9 @@ span.wpcf7-not-valid-tip {
   height: 70vh;
   display: flex;
   flex-direction: column; }
+  @media only screen and (max-width: 767px) {
+    .objects-map__list-column {
+      height: 50vh; } }
 
 .objects-map__objects-list-scroll-wrapper {
   flex-grow: 1;
@@ -8070,6 +8173,9 @@ span.wpcf7-not-valid-tip {
 
 .events {
   padding: 5rem 0; }
+  @media only screen and (max-width: 767px) {
+    .events {
+      padding: 3rem 0; } }
 
 .events__heading {
   font-weight: 400;
@@ -8080,22 +8186,32 @@ span.wpcf7-not-valid-tip {
 
 .events__row {
   display: flex;
+  flex-wrap: wrap;
   margin: -2rem -.8rem; }
 
 .events__left-column {
   flex-shrink: 0;
   width: 33.33%;
   padding: 2rem .8rem; }
+  @media only screen and (max-width: 767px) {
+    .events__left-column {
+      width: 100%; } }
 
 .events__right-column {
   width: 66.66%;
   padding: 2rem .8rem; }
   .events__right-column .news-archive__list-item {
     width: 50%; }
+    @media only screen and (max-width: 767px) {
+      .events__right-column .news-archive__list-item {
+        width: 100%; } }
   .events__right-column .news-archive__details {
     display: none; }
     .calendar-ready .events__right-column .news-archive__details {
       display: inline-block; }
+  @media only screen and (max-width: 767px) {
+    .events__right-column {
+      width: 100%; } }
 
 .error__wrapper {
   height: 100vh;
@@ -8118,14 +8234,21 @@ span.wpcf7-not-valid-tip {
 
 .corporation-map {
   padding: 5rem 0; }
+  @media only screen and (max-width: 767px) {
+    .corporation-map {
+      padding: 3rem 0; } }
 
 .corporation-map__row {
   display: flex;
-  margin: -1.5rem; }
+  margin: -1.5rem;
+  flex-wrap: wrap; }
 
 .corporation-map__col {
   width: 50%;
   padding: 1.5rem; }
+  @media only screen and (max-width: 767px) {
+    .corporation-map__col {
+      width: 100%; } }
 
 .corporation-map__map {
   position: absolute;
@@ -9944,29 +10067,55 @@ span.wpcf7-not-valid-tip {
   padding-top: 12rem;
   color: black;
   padding-bottom: 7rem; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single {
+      padding-top: 10rem;
+      padding-bottom: 3rem; } }
 
 .govsupport-single__row {
   display: flex; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__row {
+      flex-direction: column; } }
 
 .govsupport-single__main {
   width: 50%;
   flex-grow: 1; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__main {
+      width: 100%;
+      flex-grow: 0;
+      margin-bottom: 3rem; } }
 
 .govsupport-single__sidebar {
   width: 53.6rem;
   flex-shrink: 0;
   margin-left: 15.5rem; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__sidebar {
+      width: 100%;
+      flex-shrink: 1;
+      margin: 0; } }
 
 .govsupport-single__title {
   font-size: 3.6rem;
   line-height: 4.3rem;
   padding-bottom: 4rem;
   font-weight: 400; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__title {
+      font-size: 3rem;
+      line-height: 1.2;
+      padding: 0;
+      margin-bottom: 2rem; } }
 
 .govsupport-single__content {
   border-top: 2px solid #4ba4db;
   padding-top: 4.5rem;
   padding-bottom: 5rem; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__content {
+      padding: 3rem 0; } }
 
 .govsupport-single__other-heading {
   font-size: 3.6rem;
@@ -9974,6 +10123,11 @@ span.wpcf7-not-valid-tip {
   font-weight: 400;
   padding-bottom: 1.8rem;
   border-bottom: 2px solid #4ba4db; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__other-heading {
+      font-size: 3rem;
+      line-height: 1.2;
+      padding-bottom: 1.2rem; } }
 
 .govsupport-single__other-card {
   font-size: 1.8rem;
@@ -9988,6 +10142,9 @@ span.wpcf7-not-valid-tip {
     color: #7f7f7f; }
   .govsupport-single__other-card:hover {
     color: #49A2DC; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__other-card {
+      padding: 2rem 0; } }
 
 .govsupport-single__file {
   font-size: 1.8rem;
@@ -10006,6 +10163,10 @@ span.wpcf7-not-valid-tip {
 .govsupport-single__content {
   font-size: 2.4rem;
   line-height: 2.9rem; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__content {
+      font-size: 2rem;
+      line-height: 1.2; } }
   .govsupport-single__content h1,
   .govsupport-single__content h2,
   .govsupport-single__content h3,
@@ -10025,6 +10186,14 @@ span.wpcf7-not-valid-tip {
     .govsupport-single__content h5:first-child,
     .govsupport-single__content h6:first-child {
       margin-top: 0; }
+    @media only screen and (max-width: 767px) {
+      .govsupport-single__content h1,
+      .govsupport-single__content h2,
+      .govsupport-single__content h3,
+      .govsupport-single__content h4,
+      .govsupport-single__content h5,
+      .govsupport-single__content h6 {
+        margin-top: 2rem; } }
   .govsupport-single__content strong {
     color: black;
     font-weight: 400; }
@@ -10042,10 +10211,18 @@ span.wpcf7-not-valid-tip {
       vertical-align: top;
       border: none;
       padding-right: 3rem; }
+      @media only screen and (max-width: 767px) {
+        .govsupport-single__content table td,
+        .govsupport-single__content table th {
+          padding-right: 2rem; } }
     .govsupport-single__content table th {
       font-weight: 400;
       font-size: 2.4rem;
       line-height: 2.9rem; }
+      @media only screen and (max-width: 767px) {
+        .govsupport-single__content table th {
+          font-size: 1.8rem;
+          line-height: 1.2; } }
     .govsupport-single__content table thead th {
       padding-bottom: 1rem;
       border-bottom: 2px solid #7f7f7f; }
@@ -10055,6 +10232,10 @@ span.wpcf7-not-valid-tip {
       font-weight: 300;
       font-size: 2.4rem;
       line-height: 2.9rem; }
+      @media only screen and (max-width: 767px) {
+        .govsupport-single__content table td {
+          font-size: 1.8rem;
+          line-height: 1.2; } }
     .govsupport-single__content table tbody td {
       position: relative; }
       .govsupport-single__content table tbody td::before {
@@ -10113,6 +10294,9 @@ span.wpcf7-not-valid-tip {
   display: flex;
   align-items: center;
   margin-bottom: 4rem; }
+  @media only screen and (max-width: 767px) {
+    .govsupport-single__category-card {
+      margin-bottom: 2rem; } }
 
 .govsupport-single__category-card-icon-container {
   width: 5rem;
@@ -10144,6 +10328,9 @@ span.wpcf7-not-valid-tip {
 .projects-archive {
   padding-top: 7.4rem;
   padding-bottom: 7.4rem; }
+  @media only screen and (max-width: 767px) {
+    .projects-archive {
+      padding: 3rem 0; } }
 
 .projects-archive__list {
   display: flex;
@@ -10155,6 +10342,9 @@ span.wpcf7-not-valid-tip {
   flex-direction: column;
   padding: 0.8rem;
   width: 33.33%; }
+  @media only screen and (max-width: 767px) {
+    .projects-archive__list-item {
+      width: 100%; } }
 
 .projects-archive__card {
   display: flex;
@@ -10496,6 +10686,9 @@ span.wpcf7-not-valid-tip {
 
 .news-single__title {
   padding-bottom: 3rem; }
+  @media only screen and (max-width: 767px) {
+    .news-single__title {
+      padding: 0; } }
 
 .news-single__subscribe-btn {
   margin-top: 2rem; }
@@ -10505,6 +10698,9 @@ span.wpcf7-not-valid-tip {
 
 .object-card {
   padding: 5rem 0; }
+  @media only screen and (max-width: 767px) {
+    .object-card {
+      padding: 3rem 0; } }
 
 .object-card__heading {
   font-weight: 400;
@@ -10521,11 +10717,18 @@ span.wpcf7-not-valid-tip {
 .object-card__general-info-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -.4rem; }
+  margin: 0 -0.4rem; }
+  @media only screen and (max-width: 767px) {
+    .object-card__general-info-list {
+      margin: -.5rem; } }
 
 .object-card__general-info-list-item {
-  padding: 0 .4rem;
+  padding: 0 0.4rem;
   width: 50%; }
+  @media only screen and (max-width: 767px) {
+    .object-card__general-info-list-item {
+      width: 100%;
+      padding: .5rem; } }
 
 .object-card__general-info-card {
   font-size: 2.2rem;
@@ -10563,17 +10766,27 @@ span.wpcf7-not-valid-tip {
 
 .object-card__infra {
   margin-top: 4rem; }
+  @media only screen and (max-width: 767px) {
+    .object-card__infra {
+      margin-top: 3rem; } }
 
 .object-card__infra-list {
   display: flex;
   flex-wrap: wrap;
   margin: -2rem; }
+  @media only screen and (max-width: 767px) {
+    .object-card__infra-list {
+      margin: -1rem; } }
 
 .object-card__infra-list-item {
   width: 33.33%;
   display: flex;
   flex-direction: column;
   padding: 2rem; }
+  @media only screen and (max-width: 767px) {
+    .object-card__infra-list-item {
+      width: 100%;
+      padding: 1rem; } }
 
 .object-card__infra-card {
   padding: 2.5rem 3rem;
@@ -10611,6 +10824,9 @@ span.wpcf7-not-valid-tip {
   font-size: 5rem;
   line-height: 1.2;
   max-width: 100rem; }
+  @media only screen and (max-width: 767px) {
+    .object-card__main-heading {
+      font-size: 3.8rem; } }
 
 .object-card__infra-card-icon {
   width: 100%;
@@ -10643,7 +10859,7 @@ span.wpcf7-not-valid-tip {
   justify-content: flex-end;
   padding: 1rem 1.8rem;
   border-radius: 1rem;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-top-right-radius: 0;
   position: relative;
   box-shadow: 0 0.6rem 0.9rem rgba(0, 0, 0, 0.1); }
@@ -10686,7 +10902,7 @@ span.wpcf7-not-valid-tip {
 .object-card__infra-card-features-card-amount-units {
   font-size: 2.4rem;
   font-weight: 300;
-  margin-left: .5rem; }
+  margin-left: 0.5rem; }
 
 .object-card__common-info {
   margin-bottom: 2rem; }
@@ -10696,6 +10912,15 @@ span.wpcf7-not-valid-tip {
   background-color: #49A2DC;
   height: 70vh;
   margin-top: 5rem; }
+  @media only screen and (max-width: 767px) {
+    .object-card__map-container {
+      height: auto;
+      margin-top: 3rem; }
+      .object-card__map-container::after {
+        content: '';
+        padding-bottom: 75%;
+        display: block;
+        width: 100%; } }
 
 .object-card__map {
   position: absolute;
@@ -10722,6 +10947,13 @@ span.wpcf7-not-valid-tip {
     flex-direction: column;
     flex-grow: 1;
     justify-content: flex-end; }
+  @media only screen and (max-width: 767px) {
+    .project-single__intro {
+      min-height: 30rem;
+      padding: 0;
+      padding-bottom: 4rem;
+      padding-top: 4rem;
+      margin-top: 7rem; } }
 
 .project-single__bg {
   position: absolute;
@@ -10738,6 +10970,9 @@ span.wpcf7-not-valid-tip {
     width: 100%;
     height: 50%;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); }
+    @media only screen and (max-width: 767px) {
+      .project-single__bg::after {
+        height: 100%; } }
   .project-single__bg img {
     position: absolute;
     left: 0;
@@ -10755,20 +10990,33 @@ span.wpcf7-not-valid-tip {
   line-height: 7.2rem;
   margin-bottom: 1.2rem;
   font-weight: 400; }
+  @media only screen and (max-width: 767px) {
+    .project-single__title {
+      font-size: 5rem;
+      line-height: 1.2; } }
 
 .project-single__summary {
   padding-bottom: 4rem; }
+  @media only screen and (max-width: 767px) {
+    .project-single__summary {
+      padding-bottom: 2rem; } }
 
 .project-single__summary-list {
   display: flex;
   flex-wrap: wrap;
   margin: -2rem -2.4rem; }
+  @media only screen and (max-width: 767px) {
+    .project-single__summary-list {
+      margin: -1rem; } }
 
 .project-single__summary-list-item {
   width: 50%;
   display: flex;
   flex-direction: column;
   padding: 2rem 2.4rem; }
+  @media only screen and (max-width: 767px) {
+    .project-single__summary-list-item {
+      padding: 1rem; } }
 
 .project-single__summary-key {
   font-size: 2.4rem;
@@ -10777,16 +11025,28 @@ span.wpcf7-not-valid-tip {
   margin-bottom: 0.2rem;
   font-weight: 400;
   font-family: "Roboto", sans-serif; }
+  @media only screen and (max-width: 767px) {
+    .project-single__summary-key {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 1rem; } }
 
 .project-single__summary-value {
   font-size: 3.6rem;
   line-height: 4.3rem; }
+  @media only screen and (max-width: 767px) {
+    .project-single__summary-value {
+      font-size: 2.5rem;
+      line-height: 1.2; } }
 
 .project-single__apply-wrapper {
   display: flex;
   align-items: center; }
   .project-single__apply-wrapper:last-child {
     margin-bottom: 4rem; }
+    @media only screen and (max-width: 767px) {
+      .project-single__apply-wrapper:last-child {
+        margin-bottom: 0; } }
 
 .project-single__apply-link {
   font-size: 1.8rem;
@@ -10807,8 +11067,15 @@ span.wpcf7-not-valid-tip {
 
 .project-single__content {
   padding-top: 4.2rem;
+  padding-bottom: 3rem;
   font-size: 2.4rem;
   line-height: 2.9rem; }
+  @media only screen and (max-width: 767px) {
+    .project-single__content {
+      padding-top: 1rem;
+      font-size: 2rem;
+      line-height: 1.2;
+      padding-bottom: 0; } }
   .project-single__content > *:first-child {
     margin-top: 0; }
   .project-single__content > *:last-child {
@@ -10819,6 +11086,9 @@ span.wpcf7-not-valid-tip {
     border-radius: 0.8rem;
     margin: 4rem 0;
     height: auto !important; }
+    @media only screen and (max-width: 767px) {
+      .project-single__content img {
+        margin: 2rem 0; } }
   .project-single__content h1,
   .project-single__content h2,
   .project-single__content h3,
@@ -10827,8 +11097,18 @@ span.wpcf7-not-valid-tip {
   .project-single__content h6 {
     margin-top: 4rem;
     margin-bottom: 1.5rem;
-    font-size: 2.4rem;
-    line-height: 2.9rem; }
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 400; }
+    @media only screen and (max-width: 767px) {
+      .project-single__content h1,
+      .project-single__content h2,
+      .project-single__content h3,
+      .project-single__content h4,
+      .project-single__content h5,
+      .project-single__content h6 {
+        font-size: 2.4rem;
+        line-height: 1.2; } }
   .project-single__content p {
     margin-bottom: 1.5rem; }
   .project-single__content table {
@@ -10841,10 +11121,18 @@ span.wpcf7-not-valid-tip {
       vertical-align: top;
       border: none;
       padding-right: 3rem; }
+      @media only screen and (max-width: 767px) {
+        .project-single__content table td,
+        .project-single__content table th {
+          padding-right: 2rem; } }
     .project-single__content table th {
       font-weight: 400;
       font-size: 2.4rem;
       line-height: 2.9rem; }
+      @media only screen and (max-width: 767px) {
+        .project-single__content table th {
+          font-size: 1.8rem;
+          line-height: 1.2; } }
     .project-single__content table thead th {
       padding-bottom: 1rem;
       border-bottom: 2px solid #7f7f7f; }
@@ -10854,6 +11142,10 @@ span.wpcf7-not-valid-tip {
       font-weight: 300;
       font-size: 2.4rem;
       line-height: 2.9rem; }
+      @media only screen and (max-width: 767px) {
+        .project-single__content table td {
+          font-size: 1.8rem;
+          line-height: 1.2; } }
     .project-single__content table tbody td {
       position: relative; }
       .project-single__content table tbody td::before {
@@ -10897,6 +11189,9 @@ span.wpcf7-not-valid-tip {
 
 .project-single__gallery {
   padding-top: 4rem; }
+  @media only screen and (max-width: 767px) {
+    .project-single__gallery {
+      padding-top: 2rem; } }
 
 .project-single__slider-card-image {
   position: absolute;
@@ -10948,7 +11243,11 @@ span.wpcf7-not-valid-tip {
     line-height: 2.2rem;
     display: flex;
     align-items: baseline;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     min-width: 3rem;
     text-align: right;
     justify-content: flex-end; }
+
+@media only screen and (max-width: 767px) {
+  .project-single__info .govsupport-single__sidebar {
+    margin-bottom: 3rem; } }

@@ -4,6 +4,14 @@
 
     &--sym {
         padding: 4rem 0;
+        @include breakpoint(mobile) {
+            padding: 2rem 0;
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        padding-bottom: 2rem;
     }
 }
 
@@ -11,6 +19,9 @@
     display: flex;
     flex-wrap: wrap;
     margin: -2rem -.8rem;
+    @include breakpoint(mobile) {
+        margin: -2rem;
+    }
 }
 
 .news-archive__heading {
@@ -40,6 +51,11 @@
 
     &--half-width {
         width: 50%;
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 2rem;
     }
 }
 

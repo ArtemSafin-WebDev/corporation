@@ -109,7 +109,56 @@
 
 
 
+                        <?php
+                        $images = get_field('project_success_story_gallery');
+                        if ($images) : ?>
+                            <div class="project-single__gallery">
+                                <h2 class="project-single__slider-heading">
+                                    Фотогалерея
+                                </h2>
+                                <div class="project-single__slider js-project-single-slider">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <?php foreach ($images as $image) : ?>
+                                                <div class="swiper-slide">
+                                                    <div class="project-single__slider-card">
+                                                        <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="project-single__slider-card-image">
+                                                        <div class="project-single__slider-card-description">
+                                                            <?php echo esc_html($image['caption']); ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
 
+                                    <div class="project-single__slider-nav">
+                                        <button class="success-stories__nav-controls-btn success-stories__nav-controls-btn--prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false">
+                                            <svg width="20" height="20" aria-hidden="true" class="icon-slider-arrow-left">
+                                                <use xlink:href="#slider-arrow-left"></use>
+                                            </svg>
+                                        </button>
+                                        <button class="success-stories__nav-controls-btn success-stories__nav-controls-btn--next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
+                                            <svg width="20" height="20" aria-hidden="true" class="icon-slider-arrow-right">
+                                                <use xlink:href="#slider-arrow-right"></use>
+                                            </svg>
+                                        </button>
+                                        <div class="success-stories__nav-controls-fraction">7/9</div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (get_field('project_in_search')) : ?>
+                            <div class="project-single__apply-wrapper">
+                                <a href="#business" class="project-single__apply-link js-booking js-modal-open">
+                                    Подать заявку
+                                </a>
+                                <p class="project-single__apply-text">
+                                    Доступно<br> для инвестирования
+                                </p>
+                            </div>
+
+                        <?php endif; ?>
 
 
 
@@ -157,56 +206,7 @@
         </div>
     </section>
     <div class="container">
-        <?php
-        $images = get_field('project_success_story_gallery');
-        if ($images) : ?>
-            <div class="project-single__gallery">
-                <h2 class="project-single__slider-heading">
-                    Фотогалерея
-                </h2>
-                <div class="project-single__slider js-project-single-slider">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <?php foreach ($images as $image) : ?>
-                                <div class="swiper-slide">
-                                    <div class="project-single__slider-card">
-                                        <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="project-single__slider-card-image">
-                                        <div class="project-single__slider-card-description">
-                                            <?php echo esc_html($image['caption']); ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
 
-                    <div class="project-single__slider-nav">
-                        <button class="success-stories__nav-controls-btn success-stories__nav-controls-btn--prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false">
-                            <svg width="20" height="20" aria-hidden="true" class="icon-slider-arrow-left">
-                                <use xlink:href="#slider-arrow-left"></use>
-                            </svg>
-                        </button>
-                        <button class="success-stories__nav-controls-btn success-stories__nav-controls-btn--next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false">
-                            <svg width="20" height="20" aria-hidden="true" class="icon-slider-arrow-right">
-                                <use xlink:href="#slider-arrow-right"></use>
-                            </svg>
-                        </button>
-                        <div class="success-stories__nav-controls-fraction">7/9</div>
-                    </div>
-                </div>
-            </div>
-        <?php endif; ?>
-        <?php if (get_field('project_in_search')) : ?>
-            <div class="project-single__apply-wrapper">
-                <a href="#business" class="project-single__apply-link js-booking js-modal-open">
-                    Подать заявку
-                </a>
-                <p class="project-single__apply-text">
-                    Доступно<br> для инвестирования
-                </p>
-            </div>
-
-        <?php endif; ?>
     </div>
 <?php endif; ?>
 
