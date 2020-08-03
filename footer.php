@@ -3,7 +3,7 @@
         <div class="container">
             <div class="page-footer__row">
 
-                <div class="page-footer__logo-block">
+                <a href="/contacts/#maincontacts" class="page-footer__logo-block">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="" class="page-footer__logo-image">
                     <div class="page-footer__logo-text">
                         Корпорация развития<br>
@@ -13,8 +13,10 @@
                         </span>
 
                     </div>
-                </div>
+                </a>
 
+
+                <a href="tel:+73532442455" class="page-footer__phone-link">8 (3532) 44-24-55</a>
 
 
                 <nav class="page-footer__nav">

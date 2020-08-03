@@ -200,7 +200,7 @@
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
 
-                    <a href="/projects" class="govsupport-single__archive-link project-single__all-cases">Все кейсы</a>
+                    <a href="/projects" class="govsupport-single__archive-link project-single__all-cases">Все истории успеха</a>
                 </div>
             </div>
         </div>

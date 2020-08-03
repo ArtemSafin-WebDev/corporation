@@ -10,6 +10,8 @@
     background-image: url('../img/region-economics-bg.jpg');
     @include breakpoint(mobile) {
         padding: 3rem 0;
+        background-size: auto 400rem;
+        background-position: center top;
     }
 }
 
@@ -39,8 +41,13 @@
 
     @include breakpoint(mobile) {
         width: 100%;
-      
     }
+}
+
+.region-economics__accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s;
 }
 
 .region-economics__nav-link {
@@ -53,6 +60,7 @@
     align-items: center;
     transition: all 0.2s;
     position: relative;
+    background-color: #fff;
     &:link,
     &:visited {
         color: #535859;
@@ -63,12 +71,43 @@
         background: #4ba4db;
         color: white;
     }
-
+    
     &.active {
         color: black;
         background: #f0f0f0;
         .region-economics__nav-link-mark {
             opacity: 1;
+        }
+    }
+
+    .region-economics__accordion-item & {
+        padding-right: 4rem !important; 
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            background-image: url("data:image/svg+xml,%0A%3Csvg fill='darkgrey' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 7.42'%3E%3Cpath d='M1.41 0L6 4.59 10.59 0 12 1.42l-6 6-6-6z'/%3E%3C/svg%3E");
+            right: 1.8rem;
+            transform: translateY(-50%);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 1.6rem;
+            height: 1.6rem;
+            pointer-events: none;
+            transition: transform .3s;
+        }
+
+       
+    }
+
+    .region-economics__accordion-item.active & {
+        color: black;
+        .region-economics__nav-link-mark {
+            opacity: 1;
+        }
+        &::after {
+            transform: translateY(-50%) rotate(180deg);
         }
     }
 
@@ -104,7 +143,6 @@
     padding: 3.9rem 3.3rem;
     @include breakpoint(mobile) {
         padding: 2rem;
-       
     }
 }
 
@@ -119,12 +157,16 @@
 
     @include breakpoint(mobile) {
         flex-wrap: wrap;
+        margin: -1rem;
     }
 }
 
 .region-economics__item-card-left-col,
 .region-economics__item-card-right-col {
     padding: 1.6rem;
+    @include breakpoint(mobile) {
+        padding: 1rem;
+    }
 }
 
 .region-economics__item-card-left-col {
@@ -134,7 +176,6 @@
     .region-economics__item-card--icons-mode & {
         width: 100%;
     }
-
 
     @include breakpoint(mobile) {
         width: 100%;
@@ -166,6 +207,9 @@
         display: flex;
         flex-wrap: wrap;
         margin: -1.6rem;
+        @include breakpoint(mobile) {
+            margin: -1rem;
+        }
     }
 }
 
@@ -179,6 +223,11 @@
         width: 50%;
         margin: 0;
         padding: 1.6rem;
+
+        @include breakpoint(mobile) {
+            width: 100%;
+            padding: 1rem;
+        }
     }
 
     @include breakpoint(mobile) {
@@ -194,14 +243,16 @@
 
     padding: 1.8rem;
     padding-bottom: 1.2rem;
-   
-   
+
     min-height: 15.8rem;
     overflow: hidden;
     display: flex;
     align-items: center;
-}
 
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
 
 .region-economics__item-card-numbers-block-image-container {
     width: 12.6rem;
@@ -224,8 +275,12 @@
         height: 100%;
         @include objectFitContain();
     }
-}
 
+    @include breakpoint(mobile) {
+        margin: 0 auto;
+        // margin-bottom: 1.5rem;
+    }
+}
 
 .region-economics__item-card-numbers-block-content {
     width: 50%;
@@ -233,9 +288,14 @@
     align-self: stretch;
     display: flex;
     flex-direction: column;
-
+    .region-economics__accordion-item &,
     .region-economics__item-card--icons-mode & {
         align-self: center;
+        @include breakpoint(mobile) {
+            width: 100%;
+            align-self: stretch;
+            display: contents;
+        }
     }
 }
 
@@ -244,6 +304,16 @@
     line-height: 1;
     color: black;
     font-weight: 400;
+    @include breakpoint(mobile) {
+        text-align: center;
+        order: 3;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+
+        br {
+            display: none;
+        }
+    }
 }
 
 .region-economics__item-card-numbers-block-amount {

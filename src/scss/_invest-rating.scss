@@ -267,6 +267,8 @@
     @include breakpoint(mobile) {
         flex-direction: column;
         align-items: initial;
+        padding-top: 2rem;
+        
     }
 }
 
@@ -277,6 +279,7 @@
     @include breakpoint(mobile) {
         flex-wrap: wrap;
         align-items: initial;
+        margin-bottom: 2rem;
     }
 }
 
@@ -290,10 +293,15 @@
     }
 
     @include breakpoint(mobile) {
-        flex-basis: 50%;
+        flex-basis: auto;
         margin: 0;
-        padding-right: 1.5rem;
-        margin-bottom: 1.5rem;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        width: 33.33%;
+        align-items: center;
+        
+        text-align: center;
     }
 }
 
@@ -311,6 +319,7 @@
 
     @include breakpoint(mobile) {
         font-size: 5rem;
+        margin: 0;
     }
 }
 
@@ -325,8 +334,11 @@
     text-transform: lowercase;
     margin-left: 1rem;
     @include breakpoint(mobile) {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         bottom: .6rem;
+        margin-left: 0.5rem;
+        position: static;
+        margin-left: -.4em;
     }
 }
 

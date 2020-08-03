@@ -1,6 +1,10 @@
 .news-slider {
     padding: 5.4rem 0;
     background-color: #fff;
+
+    &--events {
+        background-color: #f7f7f7;
+    }
     @include breakpoint(mobile) {
         padding: 3rem 0;
     }

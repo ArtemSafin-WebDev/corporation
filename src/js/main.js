@@ -26,6 +26,8 @@ import regionEconomics from './regionEconomics';
 import npa from './npa';
 import objectsFiltersBtns from './objectFiltersBtnsActivity';
 import projectsSingleSlider from './projectsSingleSlider';
+import fullheightIntroBlock from './fullheightIntroBlock';
+
 
 window.addEventListener('load', () => {
     setTimeout(() => {
@@ -64,4 +66,5 @@ document.addEventListener('DOMContentLoaded', function() {
     npa();
     objectsFiltersBtns();
     projectsSingleSlider();
+    fullheightIntroBlock();
 });

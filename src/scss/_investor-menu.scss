@@ -9,7 +9,8 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity .2s, visibility 0s linear .2s;
-
+    display: flex;
+    flex-direction: column;
     .investor-menu-shown & {
         opacity: 1;
         visibility: visible;
@@ -25,7 +26,7 @@
     max-height: 100%;
     overflow-x: hidden;
     overscroll-behavior: contain;
-
+    flex-grow: 1;
     @include breakpoint(mobile) {
         padding-top: 4rem;
     }
@@ -53,6 +54,7 @@
     margin: -4rem -1.5rem;
     @include breakpoint(mobile) {
         margin: -1rem -1.5rem;
+        margin: -.5rem;
     }
 }
 
@@ -70,6 +72,9 @@
     @include breakpoint(mobile) {
         width: 50%;
         padding: 1rem 1.5rem;
+
+        width: 100%;
+        padding: 0.5rem;
     }
 }
 
@@ -87,7 +92,8 @@
     }
 
     @include breakpoint(mobile) {
-        font-size: 2rem;
+        font-size: 2.4rem;
+        margin-bottom: 0;
     }
 }
 
@@ -104,7 +110,7 @@
         color: $primary-color;
     }
 
-    
+  
 }
 
 
@@ -113,7 +119,9 @@
     &:last-child {
         margin-bottom: 0;
     }
-    
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 
@@ -241,4 +249,12 @@
         font-size: 1.6rem;
     }
     
+}
+
+
+.investor-menu__nav-block--home {
+    display: none;
+    @include breakpoint(mobile) {
+        display: flex;
+    }
 }

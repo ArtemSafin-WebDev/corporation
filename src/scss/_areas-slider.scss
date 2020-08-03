@@ -1,7 +1,7 @@
 .areas__slider {
     padding: 6rem 0;
     background-color: #f7f7f7;
-    padding-top: 0;
+    padding-top: 3rem;
 
     .swiper-slide {
         display: flex;
@@ -94,8 +94,8 @@
 
 .areas__slider-content {
     .swiper-container {
-        padding: 2rem;
-        margin: -2rem;
+        padding: 1.8rem;
+        margin: -1.8rem;
     }
 }
 
@@ -116,8 +116,9 @@
         height: 1rem;
         margin: 0 1rem;
         background-color: $primary-color;
+        border-color: $primary-color;
         transition: all .2s;
-        border: .2rem solid #7f7f7f;
+        outline: none !important;
         transition: border-color .2s;
     }
 

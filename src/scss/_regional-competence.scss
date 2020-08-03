@@ -63,6 +63,19 @@
         background-color: $primary-color;
         color: white;
     }
+
+    @include breakpoint(mobile) {
+        align-self: center;
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: white;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        &:link,
+        &:visited {
+            color: white;
+        }
+    }
 }
 
 .regional-competence__info-row {

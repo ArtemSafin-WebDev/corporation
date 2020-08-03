@@ -276,7 +276,7 @@
                                                                     <?php the_field('object_gas_max_power'); ?>
                                                                 </span>
                                                                 <span class="object-card__infra-card-features-card-amount-units">
-                                                                    тыс. м³ / сут
+                                                                    м³ / сут
                                                                 </span>
                                                             </span>
                                                         </div>
@@ -295,7 +295,7 @@
                                                                     <?php the_field('object_gas_free_power'); ?>
                                                                 </span>
                                                                 <span class="object-card__infra-card-features-card-amount-units">
-                                                                    тыс. м³ / сут
+                                                                    м³ / сут
                                                                 </span>
                                                             </span>
                                                         </div>

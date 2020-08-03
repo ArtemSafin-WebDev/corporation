@@ -6,7 +6,7 @@ export default function() {
         const container = slider.querySelector('.swiper-container');
         console.log('Initializing swiper');
         new Swiper(container, {
-            slidesPerView: 'auto',
+            slidesPerView: 1,
             watchOverflow: true,
             spaceBetween: 16,
             navigation: {

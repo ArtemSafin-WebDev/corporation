@@ -149,6 +149,7 @@
         width: 100%;
         order: -1;
         margin-bottom: 3rem;
+        display: none;
     }
 }
 
@@ -499,7 +500,7 @@
     flex-direction: column;
 
     @include breakpoint(mobile) {
-        height: 50vh;
+        height: 60vh;
     }
 }
 

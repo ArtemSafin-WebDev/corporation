@@ -16,18 +16,24 @@
     <div class="preloader">
         <div class="preloader__content">
             <div class="preloader__text">
-                Инвестируйте в Оренбуржье
+                Откройте бизнес в Оренбурге
             </div>
             <div class="preloader__spinner">
-                <div class="progress">
-                    <div class="indeterminate"></div>
+                <div class="sk-cube-grid">
+                    <div class="sk-cube sk-cube-1"></div>
+                    <div class="sk-cube sk-cube-2"></div>
+                    <div class="sk-cube sk-cube-3"></div>
+                    <div class="sk-cube sk-cube-4"></div>
+                    <div class="sk-cube sk-cube-5"></div>
+                    <div class="sk-cube sk-cube-6"></div>
+                    <div class="sk-cube sk-cube-7"></div>
+                    <div class="sk-cube sk-cube-8"></div>
+                    <div class="sk-cube sk-cube-9"></div>
                 </div>
             </div>
         </div>
     </div>
     <style>
-
-    
         .preloader {
             position: fixed;
             top: 0;
@@ -39,7 +45,7 @@
 
             background-color: white;
             color: #49A2DC;
-          
+
             flex-direction: column;
             display: flex;
             justify-content: center;
@@ -56,114 +62,101 @@
             font-weight: 400;
             font-size: 3rem;
             margin-bottom: 2rem;
-
-
-        }
-        
-
-      
-
-        .progress {
-            position: relative;
-            height: .3rem;
-            display: block;
-            width: 100%;
-            background-color: lightgrey;
-            border-radius: .2rem;
-            margin: 0.5rem 0 1rem 0;
-            overflow: hidden;
-            align-self: stretch;
         }
 
-        .progress .indeterminate:before {
-            content: '';
-            position: absolute;
-            background-color: inherit;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            will-change: left, right;
-            -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-            animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+        .sk-cube-grid {
+            width: 4em;
+            height: 4em;
+            margin: auto;
+            /*
+     * Spinner positions
+     * 1 2 3
+     * 4 5 6
+     * 7 8 9
+     */
         }
 
-        .progress .indeterminate:after {
-            content: '';
-            position: absolute;
-            background-color: inherit;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            will-change: left, right;
-            -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-            animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-            -webkit-animation-delay: 1.15s;
-            animation-delay: 1.15s;
-        }
-
-        .indeterminate {
+        .sk-cube-grid .sk-cube {
+            width: 33%;
+            height: 33%;
             background-color: #49A2DC;
+            float: left;
+            -webkit-animation: sk-cube-grid-scale-delay 1.3s infinite ease-in-out;
+            animation: sk-cube-grid-scale-delay 1.3s infinite ease-in-out;
         }
 
-        .progress .indeterminate:before {
-            content: '';
-            position: absolute;
-            background-color: inherit;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            will-change: left, right;
-            -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-            animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+        .sk-cube-grid .sk-cube-1 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
         }
 
-        .progress .indeterminate:after {
-            content: '';
-            position: absolute;
-            background-color: inherit;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            will-change: left, right;
-            -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-            animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-            -webkit-animation-delay: 1.15s;
-            animation-delay: 1.15s;
+        .sk-cube-grid .sk-cube-2 {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
         }
 
+        .sk-cube-grid .sk-cube-3 {
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+        }
 
-        @keyframes indeterminate {
-            0% {
-                left: -35%;
-                right: 100%;
-            }
+        .sk-cube-grid .sk-cube-4 {
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+        }
 
-            60% {
-                left: 100%;
-                right: -90%;
-            }
+        .sk-cube-grid .sk-cube-5 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
 
+        .sk-cube-grid .sk-cube-6 {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+        }
+
+        .sk-cube-grid .sk-cube-7 {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+
+        .sk-cube-grid .sk-cube-8 {
+            -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+        }
+
+        .sk-cube-grid .sk-cube-9 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
+
+        @-webkit-keyframes sk-cube-grid-scale-delay {
+
+            0%,
+            70%,
             100% {
-                left: 100%;
-                right: -90%;
+                -webkit-transform: scale3D(1, 1, 1);
+                transform: scale3D(1, 1, 1);
+            }
+
+            35% {
+                -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1);
             }
         }
 
+        @keyframes sk-cube-grid-scale-delay {
 
-        @keyframes indeterminate-short {
-            0% {
-                left: -200%;
-                right: 100%;
-            }
-
-            60% {
-                left: 107%;
-                right: -8%;
-            }
-
+            0%,
+            70%,
             100% {
-                left: 107%;
-                right: -8%;
+                -webkit-transform: scale3D(1, 1, 1);
+                transform: scale3D(1, 1, 1);
+            }
+
+            35% {
+                -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1);
             }
         }
     </style>
@@ -198,6 +191,16 @@
 
 
                                         <div class="investor-menu__nav">
+                                            <div class="investor-menu__nav-block investor-menu__nav-block--home">
+                                                <div class="investor-menu__nav-card">
+                                                    <h5 class="investor-menu__nav-card-title">
+                                                        <a href="/">
+                                                            Главная
+                                                        </a>
+                                                    </h5>
+                                                    
+                                                </div>
+                                            </div>
                                             <div class="investor-menu__nav-block">
                                                 <div class="investor-menu__nav-card">
                                                     <h5 class="investor-menu__nav-card-title">

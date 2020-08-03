@@ -7,15 +7,16 @@ export default function() {
         const container = slider.querySelector('.swiper-container');
 
         new Swiper(container, {
-            spaceBetween: 18,
+            spaceBetween: 6,
 
-            slidesPerView: 'auto',
+            slidesPerView: 1,
             // slidesPerGroup: 3,
 
             watchOverflow: true,
             pagination: {
                 el: slider.querySelector('.areas__slider-pagination'),
-                type: 'bullets'
+                type: 'bullets',
+                clickable: true
             },
             breakpoints: {
                 

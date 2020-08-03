@@ -28,11 +28,15 @@
 
 .page-footer__logo-block {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     margin-right: 4rem;
+    &:link,
+    &:visited {
+        color: inherit;
+    }
     @include breakpoint(mobile) {
         margin: 0;
-        align-items: center;
+      
         margin-bottom: 3rem;
     }
 }
@@ -40,10 +44,10 @@
 .page-footer__logo-image {
     width: 8.4rem;
     height: auto;
-    margin-right: 5.3rem;
+    margin-right: 3rem;
     flex-shrink: 0;
-    position: relative;
-    top: -2.2rem;
+    // position: relative;
+    // top: -2.2rem;
     @include breakpoint(mobile) {
         position: static;
         top: auto;
@@ -60,7 +64,7 @@
 
     .copyright {
         display: block;
-        margin-top: 2.4rem;
+        margin-top: .5rem;
         font-size: 1.8rem;
         line-height: 2.2rem;
         display: flex;
@@ -78,6 +82,8 @@
         flex-basis: auto;
         margin: 0;
         margin-bottom: 4rem;
+
+        display: none;
     }
 }
 
@@ -113,11 +119,15 @@
 
     @include breakpoint(mobile) {
         margin: 0;
+        margin-top: 2.5rem;
     }
 }
 
 .page-footer__address {
     color: white;
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .page-footer__social {
@@ -125,13 +135,16 @@
     @include breakpoint(mobile) {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-top: 4rem;
+      
+        margin: 0;
     }
 }
 
 .page-footer__social-heading {
     font-weight: 400;
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+    }
 }
 
 .page-footer__social-links {
@@ -141,12 +154,13 @@
     margin-top: 1.4rem;
     @include breakpoint(mobile) {
         margin: 0;
+        margin-left: 2rem;
     }
 }
 
 .page-footer__social-link {
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 2.8rem;
+    height: 2.8rem;
     margin-right: 1.4rem;
     svg {
         width: 100%;
@@ -171,5 +185,24 @@
 
     &:hover {
         text-decoration: underline;
+    }
+}
+
+
+.page-footer__phone-link {
+    display: none;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    @include breakpoint(mobile) {
+        display: block;
     }
 }

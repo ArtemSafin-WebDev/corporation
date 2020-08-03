@@ -434,13 +434,13 @@ export default function() {
             if (filtersState.type.active) {
                 if (filtersState.type.brownfield) {
                     queryParams.append('type[]', 'brownfield');
+                    queryParams.set('object_area', filtersState.area.objectArea);
                 }
                 if (filtersState.type.greenfield) {
                     queryParams.append('type[]', 'greenfield');
+                    queryParams.set('land_area', filtersState.area.landArea);
                 }
 
-                queryParams.set('land_area', filtersState.area.landArea);
-                queryParams.set('object_area', filtersState.area.objectArea);
             }
 
             if (filtersState.transport.active) {
@@ -617,7 +617,7 @@ export default function() {
                     <span class="objects-map__objects-card-parameter-name">
                         Площадь объекта:
                     </span>
-                    ${object.object_area} м²
+                    ${(1 * object.object_area).toLocaleString()} м²
                 </p>
                 `
                     : '';
@@ -656,7 +656,7 @@ export default function() {
                         <span class="objects-map__objects-card-parameter-name">
                             Площадь участка:
                         </span>
-                        ${object.land_area} га
+                        ${(1 * object.land_area).toLocaleString()} га
                     </p>
                     ${objectArea}
                     ${propertyType}

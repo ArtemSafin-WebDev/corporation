@@ -66,9 +66,7 @@
     line-height: 2.9rem;
 
     margin-bottom: 5.4rem;
-    @include breakpoint(mobile) {
-        margin-bottom: 3rem;
-    }
+   
     p:not([class]) {
         margin: 1.5rem 0;
     }
@@ -79,6 +77,13 @@
         }
         &:last-child {
             margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+        br {
+            display: none;
         }
     }
 }

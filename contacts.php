@@ -28,7 +28,7 @@
 </section>
 
 
-<section class="corporation-map">
+<section class="corporation-map" id="maincontacts">
     <div class="container">
         <div class="inner-container">
             <div class="corporation-map__row">

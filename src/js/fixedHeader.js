@@ -23,13 +23,5 @@ export default function() {
         });
     }
 
-    const investorMenuBtn = document.querySelector('.js-investor-menu');
-
-    if (investorMenuBtn) {
-        investorMenuBtn.addEventListener('click', event => {
-            event.preventDefault();
-            investorMenuBtn.classList.toggle('active');
-            document.body.classList.toggle('investor-menu-shown');
-        });
-    }
+   
 }

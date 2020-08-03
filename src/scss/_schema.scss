@@ -3,6 +3,7 @@
     padding-bottom: 5rem;
     @include breakpoint(mobile) {
         padding: 3rem 0;
+        padding-bottom: 0;
     }
 }
 
@@ -144,12 +145,18 @@
     align-items: center;
     color: #7f7f7f;
     transition: color 0.2s;
-    margin-right: 1.6rem;
+   
     
     cursor: pointer;
     &:first-child {
         .icon-step-arrow {
             display: none;
+        }
+    }
+
+    &:first-child {
+        .icon-step {
+            margin-left: 0;
         }
     }
 
@@ -161,10 +168,11 @@
         fill: currentColor;
         transition: fill 0.2s, transform .2s;
         transform: scale(0.7);
-
+        margin-left: 1rem;
         @include breakpoint(mobile) {
             width: 3rem;
             height: 3rem;
+            margin: 0;
         }
     }
 
@@ -173,16 +181,19 @@
         height: 1.5rem;
         flex-shrink: 0;
         fill: currentColor;
-        margin-right: 1.6rem;
+        
         @include breakpoint(mobile) {
             width: 5rem;
-            margin-right: 1rem;
+            align-self: flex-start;
+            margin: 0 .4rem;
+            margin-top: 0.7rem;
         }
     }
 
 
     @include breakpoint(mobile) {
         margin: 0;
+        position: relative;
     }
 }
 
@@ -201,7 +212,26 @@
     }
 
     @include breakpoint(mobile) {
-        display: none;
+        
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        margin-top: 0.3rem;
+    }
+}
+
+
+.schema__steps-bullet-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    position: relative;
+    @include breakpoint(mobile) {
+        margin: 0;
+        flex-direction: column;
+        align-items: initial;
+        
     }
 }
 
@@ -215,7 +245,7 @@
     }
 
     @include breakpoint(mobile) {
-        flex-direction: column;
+        // flex-direction: column;
     }
 }
 
@@ -228,6 +258,7 @@
     align-items: flex-start;
     @include breakpoint(mobile) {
         width: 100%;
+        display: contents;
     }
 }
 
@@ -239,6 +270,7 @@
     @include breakpoint(mobile) {
         width: 100%;
         flex-grow: 0;
+        display: contents;
     }
 }
 
@@ -250,6 +282,11 @@
         height: 7rem;
         fill: $primary-color;
         display: block;
+
+        @include breakpoint(mobile) {
+            width: 3rem;
+            height: 7rem;
+        }
     }
 
     &--prev {
@@ -266,14 +303,14 @@
 .schema__steps-btn--prev {
     margin-right: 9rem;
     @include breakpoint(mobile) {
-        display: none;
+        margin-right: 2rem;
     }
 }
 
 .schema__steps-btn--next {
     margin-left: 9rem;
     @include breakpoint(mobile) {
-        display: none;
+        margin-left: 2rem;
     }
 }
 
@@ -281,8 +318,8 @@
     width: 50%;
     flex-grow: 1;
     @include breakpoint(mobile) {
-        width: 100%;
-        flex-grow: 0;
+        width: 50%;
+        flex-grow: 1;
     }
 }
 
@@ -290,8 +327,11 @@
     display: flex;
     align-items: center;
 
-  
-}
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+}   
 
 .schema__steps-bullet {
     &--active {
@@ -320,6 +360,7 @@
         width: 100%;
         margin: 0;
         flex-shrink: 1;
+      
     }
 }
 
@@ -362,6 +403,8 @@
         font-size: 10rem;
         line-height: 1;
         margin-bottom: 1.5rem;
+        text-align: center;
+        display: block;
     }
 }
 
@@ -391,6 +434,8 @@
             text-decoration: none;
         }
     }
+
+    
 }
 
 .schema__steps-card-next-step-digit {
